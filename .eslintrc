@@ -1,0 +1,19 @@
+{
+  "extends": "airbnb",
+  "rules": {
+    "react/jsx-filename-extension": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/jsx-sort-props": ["warn"],
+    "simple-import-sort/sort": "warn",
+    "sort-imports": "off",
+    "import/order": "off"
+  },
+  "plugins": ["simple-import-sort"],
+  "globals": {
+    "Component": "readonly",
+    "Fragment": "readonly",
+    "Link": "readonly",
+    "PropTypes": "readonly",
+    "React": "readonly"
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "name": "hacker-zeit",
+  "version": "1.0.0",
+  "description": "Hacker News clone built with Next.js and GraphQL/Apollo",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jesperryom/hacker-zeit.git"
+  },
+  "author": "Jesper Ryom",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jesperryom/hacker-zeit/issues"
+  },
+  "homepage": "https://github.com/jesperryom/hacker-zeit#readme",
+  "dependencies": {
+    "firebase": "7.14.0",
+    "next": "9.3.5",
+    "react": "16.13.1",
+    "react-dom": "16.13.1"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.1.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-react-hooks": "^2.5.0",
+    "eslint-plugin-simple-import-sort": "^5.0.2",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.1.3",
+    "prettier": "^2.0.4"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": "eslint --cache --fix",
+    "*.{js,css,md}": "prettier --write"
+  }
+}
