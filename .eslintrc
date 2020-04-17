@@ -16,5 +16,13 @@
     "Link": "readonly",
     "PropTypes": "readonly",
     "React": "readonly"
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {},
+      "webpack": {
+        "config": "next.config.js"
+      }
+    }
   }
 }
