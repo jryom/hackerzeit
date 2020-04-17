@@ -1,7 +1,7 @@
 {
   "name": "hacker-zeit",
   "version": "1.0.0",
-  "description": "Hacker News clone built with Next.js and GraphQL/Apollo",
+  "description": "Hacker News clone built with Next.js and Firebase",
   "main": "index.js",
   "scripts": {
     "dev": "next",
