@@ -2,12 +2,12 @@
   "parser": "babel-eslint",
   "extends": ["airbnb", "airbnb/hooks"],
   "rules": {
+    "import/order": "off",
     "react/jsx-filename-extension": "off",
     "react/jsx-props-no-spreading": "off",
     "react/jsx-sort-props": ["warn"],
     "simple-import-sort/sort": "warn",
-    "sort-imports": "off",
-    "import/order": "off"
+    "sort-imports": "off"
   },
   "plugins": ["simple-import-sort"],
   "globals": {
@@ -20,8 +20,8 @@
   "settings": {
     "import/resolver": {
       "node": {},
-      "webpack": {
-        "config": "next.config.js"
+      "alias": {
+        "map": [["@", "./src"]]
       }
     }
   }
