@@ -1,3 +1,6 @@
+/* eslint-disable no-param-reassign */
+const path = require('path');
+
 module.exports = {
   webpack: (config, { webpack }) => {
     config.plugins.push(
@@ -9,6 +12,7 @@ module.exports = {
         Component: ['react', 'Component'],
       }),
     );
+    config.resolve.alias['@'] = path.resolve(__dirname, 'src');
     return config;
   },
 };
