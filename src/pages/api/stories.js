@@ -25,10 +25,16 @@ export default async (req, res) => {
     .then((snapshot) => snapshot.val());
 
   const offset = page * 30;
+
   const promiseArray = ids
     .slice(offset, offset + 30)
     .map((id) => firebase.database().ref(`/v0/item/${id}`).once('value'));
-  const stories = await Promise.all(promiseArray).then((snapshotArray) => snapshotArray.map((dataSnapshot) => dataSnapshot.val()));
+
+  const stories = (
+    await Promise.all(promiseArray).then((snapshotArray) =>
+      snapshotArray.map((dataSnapshot) => dataSnapshot.val())
+    )
+  ).sort((a, b) => b.score - a.score);
 
   res.statusCode = 200;
   res.setHeader('Content-Type', 'application/json');
