@@ -1,6 +1,6 @@
 {
   "parser": "babel-eslint",
-  "extends": ["airbnb", "airbnb/hooks"],
+  "extends": ["airbnb", "airbnb/hooks", "prettier"],
   "rules": {
     "import/order": "off",
     "react/jsx-filename-extension": "off",
