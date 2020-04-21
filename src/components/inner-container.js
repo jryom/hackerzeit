@@ -5,6 +5,7 @@ export default styled('div')`
   background-color: ${({ theme }) => theme.colors.lightGrey};
   margin: 0 auto;
   max-width: ${({ theme }) => theme.maxWidth};
+  min-height: 100vh;
 
   @media (prefers-color-scheme: dark) {
     background-color: ${({ theme }) => theme.colors.midGrey};
