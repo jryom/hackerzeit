@@ -1,6 +1,7 @@
 import useSWR, { useSWRPages } from 'swr';
 
 import { InfiniteScroll, Link, Text } from '@/components';
+import { PAGE_LENGTH } from '@/constants';
 import { fetch } from '@/utils';
 
 const Index = () => {
@@ -17,12 +18,12 @@ const Index = () => {
         return <Text>Loading</Text>;
       }
 
-      return data.stories.map((story, idx) => (
+      return data.stories.map((story, index) => (
         <article key={story.id}>
           <div>
             <Link href={story.url}>
               <Text as="span" size="m">
-                {`${idx + 1 + data.page * data.stories.length}. ${story.title}`}
+                {`${index + 1 + data.page * PAGE_LENGTH}. ${story.title}`}
               </Text>
             </Link>
           </div>
@@ -39,9 +40,7 @@ const Index = () => {
       ));
     },
 
-    ({ data }) => {
-      return data?.page + 1;
-    },
+    ({ data }) => data?.nextPage,
 
     []
   );

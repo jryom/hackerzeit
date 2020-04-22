@@ -2,6 +2,8 @@ import 'firebase/database';
 
 import firebase from 'firebase/app';
 
+import { PAGE_LENGTH } from '@/constants';
+
 if (!firebase.apps.length) {
   firebase.initializeApp({
     databaseURL: 'https://hacker-news.firebaseio.com/',
@@ -9,7 +11,6 @@ if (!firebase.apps.length) {
 }
 
 export default async (req, res) => {
-  const pageLength = 30;
   const {
     query: { page, name },
     method,
@@ -19,16 +20,18 @@ export default async (req, res) => {
     res.setHeader('Allow', 'GET');
     res.status(405).end(`Method ${method} Not Allowed`);
   }
+
   const ids = await firebase
     .database()
     .ref(`/v0/${name}`)
     .once('value')
     .then((snapshot) => snapshot.val());
 
-  const offset = (page || 0) * pageLength;
+  const totalPages = Math.ceil(ids.length / PAGE_LENGTH) - 1;
+  const offset = (page || 0) * PAGE_LENGTH;
 
   const promiseArray = ids
-    .slice(offset, offset + pageLength)
+    .slice(offset, offset + PAGE_LENGTH)
     .map((id) => firebase.database().ref(`/v0/item/${id}`).once('value'));
 
   const stories = (
@@ -40,5 +43,11 @@ export default async (req, res) => {
   res.statusCode = 200;
   res.setHeader('Content-Type', 'application/json');
   res.setHeader('Cache-Control', 'max-age=300');
-  res.end(JSON.stringify({ page: offset / pageLength, stories }));
+  res.end(
+    JSON.stringify({
+      page: offset / PAGE_LENGTH,
+      stories,
+      nextPage: totalPages > page ? Number(page) + 1 : null,
+    })
+  );
 };
