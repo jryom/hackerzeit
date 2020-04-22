@@ -1,31 +1,28 @@
 import useSWR, { useSWRPages } from 'swr';
 
-import { Link, Text } from '@/components';
+import { InfiniteScroll, Link, Text } from '@/components';
 import { fetch } from '@/utils';
 
 const Index = () => {
-  const {
-    pages, isLoadingMore, isReachingEnd, loadMore,
-  } = useSWRPages(
-    'top',
+  const { pages, isLoadingMore, isReachingEnd, loadMore } = useSWRPages(
+    'best',
+
     ({ offset, withSWR }) => {
-      const { data: stories } = withSWR(
+      const { data } = withSWR(
         // eslint-disable-next-line react-hooks/rules-of-hooks
-        useSWR(
-          `/api/stories?name=beststories&page=${offset || 0}`,
-          fetch,
-        ),
+        useSWR(`/api/stories?name=beststories&page=${offset || 0}`, fetch)
       );
-      if (!stories) {
+
+      if (!data) {
         return <Text>Loading</Text>;
       }
 
-      return stories.map((story, idx) => (
+      return data.stories.map((story, idx) => (
         <article key={story.id}>
           <div>
             <Link href={story.url}>
               <Text as="span" size="m">
-                {`${idx + 1}. ${story.title}`}
+                {`${idx + 1 + data.page * data.stories.length}. ${story.title}`}
               </Text>
             </Link>
           </div>
@@ -42,12 +39,22 @@ const Index = () => {
       ));
     },
 
-    ({ data }) => (data?.length ? data[data.length - 1].id + 1 : null),
+    ({ data }) => {
+      return data?.page + 1;
+    },
 
-    [],
+    []
   );
 
-  return <>{pages}</>;
+  return (
+    <InfiniteScroll
+      canLoadMore={!isReachingEnd}
+      handler={loadMore}
+      isLoading={isLoadingMore}
+    >
+      {pages}
+    </InfiniteScroll>
+  );
 };
 
 export default Index;
