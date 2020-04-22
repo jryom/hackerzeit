@@ -9,6 +9,7 @@ if (!firebase.apps.length) {
 }
 
 export default async (req, res) => {
+  const pageLength = 30;
   const {
     query: { page, name },
     method,
@@ -24,10 +25,10 @@ export default async (req, res) => {
     .once('value')
     .then((snapshot) => snapshot.val());
 
-  const offset = page * 30;
+  const offset = (page || 0) * pageLength;
 
   const promiseArray = ids
-    .slice(offset, offset + 30)
+    .slice(offset, offset + pageLength)
     .map((id) => firebase.database().ref(`/v0/item/${id}`).once('value'));
 
   const stories = (
@@ -38,5 +39,6 @@ export default async (req, res) => {
 
   res.statusCode = 200;
   res.setHeader('Content-Type', 'application/json');
-  res.end(JSON.stringify(stories));
+  res.setHeader('Cache-Control', 'max-age=300');
+  res.end(JSON.stringify({ page: offset / pageLength, stories }));
 };
