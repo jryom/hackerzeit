@@ -2,3 +2,4 @@
 export { default as captureDomain } from './capture-domain';
 export { default as fetch } from './fetch';
 export { default as getIntersectionObserver } from './intersection-observer';
+export { default as relativeTime } from './relative-time';
