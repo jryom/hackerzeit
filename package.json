@@ -21,7 +21,7 @@
   "dependencies": {
     "@styled-system/css": "5.1.5",
     "firebase": "7.14.1",
-    "intersection-observer": "0.9.0",
+    "intersection-observer": "0.10.0",
     "next": "9.3.5",
     "react": "16.13.1",
     "react-dom": "16.13.1",
