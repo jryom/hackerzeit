@@ -10,6 +10,7 @@ export default {
     darkGrey: '#555',
     white: '#f4f4f4',
   },
+  breakpoints: ['50em', '60em'],
   fontSizes: [
     '.75rem',
     '.875rem',
