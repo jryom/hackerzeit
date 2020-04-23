@@ -3,6 +3,8 @@ import styled from 'styled-components';
 
 export default styled('div')`
   background-color: ${({ theme }) => theme.colors.lightGrey};
+  display: flex;
+  flex-direction: column;
   margin: 0 auto;
   max-width: ${({ theme }) => theme.maxWidth};
   min-height: 100vh;

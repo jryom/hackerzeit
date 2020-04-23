@@ -1,6 +1,6 @@
 import useSWR, { useSWRPages } from 'swr';
 
-import { InfiniteScroll, ListItem, Text } from '@/components';
+import { InfiniteScroll, ListItem, LoadingIndicator } from '@/components';
 import { PAGE_LENGTH } from '@/constants';
 import { fetch } from '@/utils';
 
@@ -14,9 +14,19 @@ const Index = () => {
         useSWR(`/api/stories?name=beststories&page=${offset || 0}`, fetch)
       );
 
-      if (!data) {
-        return <Text>Loading</Text>;
-      }
+      if (!data)
+        return (
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              flex: 1,
+              justifyContent: 'center',
+            }}
+          >
+            <LoadingIndicator mY={2} />
+          </div>
+        );
 
       return data.stories.map((story, index) => (
         <ListItem
