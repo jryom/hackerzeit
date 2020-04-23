@@ -2,6 +2,7 @@ import useSWR, { useSWRPages } from 'swr';
 
 import { InfiniteScroll, ListItem, LoadingIndicator } from '@/components';
 import { PAGE_LENGTH } from '@/constants';
+import { Box } from '@/primitives';
 import { fetch } from '@/utils';
 
 const Index = () => {
@@ -16,25 +17,25 @@ const Index = () => {
 
       if (!data)
         return (
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              flex: 1,
-              justifyContent: 'center',
-            }}
+          <Box
+            display="flex"
+            flex="1"
+            flexDirection="column"
+            justifyContent="center"
           >
-            <LoadingIndicator mY={2} />
-          </div>
+            <LoadingIndicator my={[3, 4]} />
+          </Box>
         );
 
-      return data.stories.map((story, index) => (
-        <ListItem
-          key={story.id}
-          data={story}
-          number={index + 1 + data.page * PAGE_LENGTH}
-        />
-      ));
+      return data.stories.map((story, index) => {
+        return (
+          <ListItem
+            key={story.id}
+            data={story}
+            number={index + 1 + data.page * PAGE_LENGTH}
+          />
+        );
+      });
     },
 
     ({ data }) => data?.nextPage,

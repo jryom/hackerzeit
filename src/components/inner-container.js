@@ -1,7 +1,7 @@
 import css from '@styled-system/css';
 import styled from 'styled-components';
 
-export default styled('div')`
+export default styled('main')`
   background-color: ${({ theme }) => theme.colors.lightGrey};
   display: flex;
   flex-direction: column;
