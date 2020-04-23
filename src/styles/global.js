@@ -33,7 +33,7 @@ dd {
 body {
   min-height: 100vh;
   scroll-behavior: smooth;
-  text-rendering: optimizeSpeed;
+  text-rendering: optimizeLegibility;
   line-height: 1.5;
 }
 
