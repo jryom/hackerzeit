@@ -1,4 +1,5 @@
 import { Link, Text } from '@/components';
+import { captureDomain } from '@/utils';
 
 const ListItem = ({ data, number }) => (
   <article>
@@ -6,6 +7,9 @@ const ListItem = ({ data, number }) => (
       <Link href={data.url}>
         <Text as="span" size="m">
           {`${number}. ${data.title}`}
+        </Text>
+        <Text as="span" size="xs">
+          {` (${captureDomain(data.url)})`}
         </Text>
       </Link>
     </div>
