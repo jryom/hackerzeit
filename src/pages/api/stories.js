@@ -41,8 +41,6 @@ export default async (req, res) => {
   ).sort((a, b) => b.score - a.score);
 
   res.statusCode = 200;
-  res.setHeader('Content-Type', 'application/json');
-  res.setHeader('Cache-Control', 'max-age=300');
   res.end(
     JSON.stringify({
       page: offset / PAGE_LENGTH,
