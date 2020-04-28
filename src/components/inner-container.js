@@ -14,7 +14,7 @@ export default styled('main')`
   }
 
   ${css({
-    paddingX: [3, 6],
+    paddingX: [4, 6],
     paddingY: [3, 4],
   })}
 `;
