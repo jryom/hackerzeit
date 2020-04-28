@@ -1,8 +1,12 @@
 import useSWR, { useSWRPages } from 'swr';
 
-import { InfiniteScroll, ListItem, LoadingIndicator } from '@/components';
-import { PAGE_LENGTH } from '@/constants';
-import { Box } from '@/primitives';
+import {
+  InfiniteScroll,
+  ItemSubtitle,
+  ItemTitle,
+  LoadingIndicator,
+} from '@/components';
+import { Box, Ol } from '@/primitives';
 import { fetch } from '@/utils';
 
 const Index = () => {
@@ -27,13 +31,12 @@ const Index = () => {
           </Box>
         );
 
-      return data.stories.map((story, index) => {
+      return data.stories.map((story) => {
         return (
-          <ListItem
-            key={story.id}
-            data={story}
-            number={index + 1 + data.page * PAGE_LENGTH}
-          />
+          <Box key={story.id} as="li" mb={[3, 4]} pl={[1, 2]}>
+            <ItemTitle data={story} />
+            <ItemSubtitle data={story} />
+          </Box>
         );
       });
     },
@@ -44,13 +47,15 @@ const Index = () => {
   );
 
   return (
-    <InfiniteScroll
-      canLoadMore={!isReachingEnd}
-      handler={loadMore}
-      isLoading={isLoadingMore}
-    >
-      {pages}
-    </InfiniteScroll>
+    <Ol>
+      <InfiniteScroll
+        canLoadMore={!isReachingEnd}
+        handler={loadMore}
+        isLoading={isLoadingMore}
+      >
+        {pages}
+      </InfiniteScroll>
+    </Ol>
   );
 };
 
