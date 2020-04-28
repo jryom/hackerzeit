@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const isRelativeUrl = (url) => {
   const link = document.createElement('a');
   link.href = url;
-  return link.origin + link.pathname + link.search + link.hash === url;
+  return link.origin + link.pathname + link.search + link.hash !== url;
 };
 
 const Anchor = styled.a`
