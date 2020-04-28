@@ -20,7 +20,7 @@
   "homepage": "https://github.com/jesperryom/hacker-zeit#readme",
   "dependencies": {
     "@styled-system/css": "5.1.5",
-    "firebase": "7.14.1",
+    "firebase": "7.14.2",
     "intersection-observer": "0.10.0",
     "next": "9.3.5",
     "react": "16.13.1",
@@ -45,7 +45,7 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-react-hooks": "^3.0.0",
-    "eslint-plugin-simple-import-sort": "^5.0.2",
+    "eslint-plugin-simple-import-sort": "^5.0.3",
     "husky": "^4.2.5",
     "lint-staged": "^10.1.7",
     "prettier": "^2.0.5",
