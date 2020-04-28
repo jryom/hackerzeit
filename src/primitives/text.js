@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { color, space, typography, variant } from 'styled-system';
+import styled, { css } from 'styled-components';
+import { color, position, space, typography, variant } from 'styled-system';
 
 const fontSizeVariants = () =>
   variant({
@@ -23,6 +23,16 @@ const fontSizeVariants = () =>
     },
   });
 
+const hoverUnderlineCss = css`
+  &:hover {
+    text-decoration: underline;
+  }
+`;
+
+const pointerCss = css`
+  cursor: pointer;
+`;
+
 export default styled('span')`
   ${fontSizeVariants}
   color: ${({ theme }) => theme.colors.midGray};
@@ -36,6 +46,8 @@ export default styled('span')`
     color: ${({ theme }) => theme.colors.nearWhite};
   }
 
+  ${({ hoverUnderline }) => (hoverUnderline ? hoverUnderlineCss : '')}
+  ${({ pointer }) => (pointer ? pointerCss : '')}
   ${color}
   ${position}
   ${space}
