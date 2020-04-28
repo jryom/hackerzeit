@@ -10,7 +10,6 @@ export default createGlobalStyle`
 ul[class],
 ol[class] {
   padding: 0;
-  list-style: none;
 }
 
 body,
