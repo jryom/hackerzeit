@@ -1,4 +1,8 @@
 export default {
+  fontFamilies: {
+    sans: '"avenir next", avenir, sans-serif',
+    serif: '"Garamond", serif',
+  },
   colors: {
     white: '#fcfcfc',
     nearWhite: '#f1f1f1',

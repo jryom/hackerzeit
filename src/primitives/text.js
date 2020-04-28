@@ -1,41 +1,35 @@
 import styled from 'styled-components';
 import { color, space, typography, variant } from 'styled-system';
 
-const avenir = '"avenir next", avenir, sans-serif';
-const athelas = 'athelas, georgia, serif';
-
-const fontVariants = () =>
+const fontSizeVariants = () =>
   variant({
     prop: 'size',
     variants: {
       xl: {
-        fontSize: [2, 3],
-        lineHeight: [1, 2],
+        fontSize: [4, 5],
       },
       l: {
-        fontSize: [2, 3],
-        lineHeight: [1, 2],
+        fontSize: [3, 4],
       },
       m: {
         fontSize: [2, 3],
-        lineHeight: [1, 2],
       },
       s: {
         fontSize: [1, 2],
-        lineHeight: [0, 1],
       },
       xs: {
         fontSize: [0, 1],
-        lineHeight: [0, 1],
       },
     },
   });
 
 export default styled('span')`
-  ${fontVariants}
+  ${fontSizeVariants}
   color: ${({ theme }) => theme.colors.midGray};
-  font-family: ${({ serif }) => (serif ? athelas : avenir)};
+  font-family: ${({ serif, theme }) =>
+    serif ? theme.fontFamilies.serif : theme.fontFamilies.sans};
   font-weight: ${({ bold }) => (bold ? 600 : 400)};
+  line-height: 1.5em;
   transition-property: color .3s;
 
   @media (prefers-color-scheme: dark) {
@@ -43,6 +37,7 @@ export default styled('span')`
   }
 
   ${color}
+  ${position}
   ${space}
   ${typography}
 `;
