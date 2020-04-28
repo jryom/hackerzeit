@@ -33,13 +33,13 @@ const fontVariants = () =>
 
 export default styled('span')`
   ${fontVariants}
-  color: ${({ theme }) => theme.colors.darkGrey};
+  color: ${({ theme }) => theme.colors.midGray};
   font-family: ${({ serif }) => (serif ? athelas : avenir)};
   font-weight: ${({ bold }) => (bold ? 600 : 400)};
   transition-property: color .3s;
 
   @media (prefers-color-scheme: dark) {
-    color: ${({ theme }) => theme.colors.lightGrey};
+    color: ${({ theme }) => theme.colors.nearWhite};
   }
 
   ${color}

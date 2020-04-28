@@ -1,14 +1,11 @@
 export default {
   colors: {
-    text: '#000',
-    background: '#fff',
-    primary: '#00f',
-    secondary: '#00a',
-    gray: '#eee',
-    lightGrey: '#fafafa',
-    midGrey: '#666',
-    darkGrey: '#555',
-    white: '#f4f4f4',
+    white: '#fcfcfc',
+    nearWhite: '#f1f1f1',
+    lightGray: '#999',
+    gray: '#777',
+    midGray: '#555',
+    darkGray: '#333',
   },
   breakpoints: ['50em', '60em'],
   fontSizes: [
