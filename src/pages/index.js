@@ -48,13 +48,12 @@ const Index = () => {
 
   return (
     <Ol>
+      {pages}
       <InfiniteScroll
         canLoadMore={!isReachingEnd}
         handler={loadMore}
         isLoading={isLoadingMore}
-      >
-        {pages}
-      </InfiniteScroll>
+      />
     </Ol>
   );
 };
