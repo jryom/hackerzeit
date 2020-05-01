@@ -14,7 +14,7 @@ const ItemSubtitle = ({ data }) => (
     </Text>
     <Link href={`/item?id=${data.id}`}>
       <Text as="span" hoverUnderline size="s">
-        {`${data.kids?.length || 0} comments`}
+        {`${data.descendants} comments`}
       </Text>
     </Link>
   </Box>
@@ -23,10 +23,11 @@ const ItemSubtitle = ({ data }) => (
 ItemSubtitle.propTypes = {
   data: PropTypes.shape({
     by: PropTypes.string.isRequired,
+    descendants: PropTypes.number.isRequired,
     id: PropTypes.number.isRequired,
+    kids: PropTypes.array,
     score: PropTypes.number.isRequired,
     time: PropTypes.number.isRequired,
-    kids: PropTypes.array,
   }).isRequired,
 };
 
