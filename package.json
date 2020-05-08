@@ -20,7 +20,7 @@
   "homepage": "https://github.com/jesperryom/hacker-zeit#readme",
   "dependencies": {
     "@styled-system/css": "5.1.5",
-    "firebase": "7.14.2",
+    "firebase": "7.14.3",
     "intersection-observer": "0.10.0",
     "next": "9.3.6",
     "react": "16.13.1",
