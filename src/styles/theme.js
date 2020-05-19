@@ -4,7 +4,7 @@ export default {
     serif: '"Garamond", serif',
   },
   colors: {
-    white: '#fcfcfc',
+    white: '#fbfbfb',
     nearWhite: '#f1f1f1',
     lightGray: '#999',
     gray: '#777',
