@@ -1,10 +1,11 @@
 import Link from 'next/link';
 import styled from 'styled-components';
 
-const isRelativeUrl = (url) => {
-  const link = document.createElement('a');
-  link.href = url;
-  return link.origin + link.pathname + link.search + link.hash !== url;
+const isExternalUrl = (url) => {
+  const a = document.createElement('a');
+  a.href = url;
+  const aProperties = a.origin + a.pathname + a.search + a.hash;
+  return aProperties.startsWith(url);
 };
 
 const Anchor = styled.a`
@@ -13,7 +14,7 @@ const Anchor = styled.a`
 `;
 
 const StyledLink = ({ children, href }) => {
-  if (isRelativeUrl(href)) {
+  if (!isExternalUrl(href)) {
     return (
       <Link href={href}>
         <Anchor>{children}</Anchor>
