@@ -13,13 +13,7 @@ if (!firebase.apps.length) {
 export default async (req, res) => {
   const {
     query: { page, name },
-    method,
   } = req;
-
-  if (method !== 'GET') {
-    res.setHeader('Allow', 'GET');
-    res.status(405).end(`Method ${method} Not Allowed`);
-  }
 
   const ids = await firebase
     .database()
@@ -36,7 +30,7 @@ export default async (req, res) => {
 
   const stories = (
     await Promise.all(promiseArray).then((snapshotArray) =>
-      snapshotArray.map((dataSnapshot) => dataSnapshot.val())
+      snapshotArray.map((snapshot) => snapshot.val())
     )
   ).sort((a, b) => b.score - a.score);
 
