@@ -35,15 +35,18 @@ const pointerCss = css`
 
 export default styled('span')`
   ${fontSizeVariants}
-  color: ${({ theme }) => theme.colors.midGray};
+  color: ${({ theme, ...props }) =>
+    theme.colors[props.darkVariant] || theme.colors.midGray};
   font-family: ${({ serif, theme }) =>
     serif ? theme.fontFamilies.serif : theme.fontFamilies.sans};
   font-weight: ${({ bold }) => (bold ? 600 : 400)};
+  ${({ italic }) => (italic ? 'font-style: italic' : null)};
   line-height: 1.5em;
   transition-property: color .3s;
 
   @media (prefers-color-scheme: dark) {
-    color: ${({ theme }) => theme.colors.nearWhite};
+    color: ${({ theme, ...props }) =>
+      theme.colors[props.lightVariant] || theme.colors.nearWhite};
   }
 
   ${({ hoverUnderline }) => (hoverUnderline ? hoverUnderlineCss : '')}
