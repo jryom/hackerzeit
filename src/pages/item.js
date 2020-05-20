@@ -26,16 +26,7 @@ const Item = () => {
       );
 
       if (!comment?.kids.length) {
-        return (
-          <Box
-            display="flex"
-            flex="1"
-            flexDirection="column"
-            justifyContent="center"
-          >
-            <LoadingIndicator my={[3, 4]} />
-          </Box>
-        );
+        return null;
       }
 
       return comment.kids.map((kid) => <RecursiveComments comment={kid} />);
@@ -47,16 +38,28 @@ const Item = () => {
   );
 
   return data ? (
-    <Box>
-      <ItemTitle data={data} />
-      <ItemSubtitle data={data} />
-      {pages}
-      <LoadButton
-        isLoadingMore={isLoadingMore}
-        isReachingEnd={isReachingEnd}
-        loadMore={loadMore}
-      />
-    </Box>
+    <>
+      <Box marginBottom={[3, 4]}>
+        <ItemTitle data={data} />
+        <ItemSubtitle data={data} />
+        {pages}
+      </Box>
+
+      {isLoadingMore && (
+        <Box
+          display="flex"
+          flex="1"
+          flexDirection="column"
+          justifyContent="center"
+        >
+          <LoadingIndicator />
+        </Box>
+      )}
+
+      {!isLoadingMore && (
+        <LoadButton isReachingEnd={isReachingEnd} loadMore={loadMore} />
+      )}
+    </>
   ) : null;
 };
 

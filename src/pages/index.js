@@ -19,17 +19,7 @@ const Index = () => {
         useSWR(`/api/stories?name=beststories&page=${offset || 0}`, fetch)
       );
 
-      if (!data)
-        return (
-          <Box
-            display="flex"
-            flex="1"
-            flexDirection="column"
-            justifyContent="center"
-          >
-            <LoadingIndicator my={[3, 4]} />
-          </Box>
-        );
+      if (!data) return null;
 
       return data.stories.map((story) => {
         return (
@@ -47,14 +37,26 @@ const Index = () => {
   );
 
   return (
-    <Ol>
-      {pages}
-      <InfiniteScroll
-        canLoadMore={!isReachingEnd}
-        handler={loadMore}
-        isLoading={isLoadingMore}
-      />
-    </Ol>
+    <>
+      <Ol>
+        {pages}
+        <InfiniteScroll
+          canLoadMore={!isReachingEnd}
+          handler={loadMore}
+          isLoading={isLoadingMore}
+        />
+      </Ol>
+      {isLoadingMore && (
+        <Box
+          display="flex"
+          flex="1"
+          flexDirection="column"
+          justifyContent="center"
+        >
+          <LoadingIndicator my={[3, 4]} />
+        </Box>
+      )}
+    </>
   );
 };
 
