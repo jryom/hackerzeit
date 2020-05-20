@@ -6,8 +6,8 @@ export default {
   colors: {
     white: '#fbfbfb',
     nearWhite: '#f1f1f1',
-    lightGray: '#999',
-    gray: '#777',
+    lightGray: '#ebebeb',
+    gray: '#a6a6a6',
     midGray: '#555',
     darkGray: '#333',
   },

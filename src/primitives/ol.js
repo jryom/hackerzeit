@@ -4,7 +4,7 @@ import { typography } from 'styled-system';
 
 export default styled.ol`
   font-family: ${({ theme }) => theme.fontFamilies.serif};
-  color: ${({ theme }) => theme.colors.lightGray};
+  color: ${({ theme }) => theme.colors.gray};
   margin: 1em;
 
   ${typography};
