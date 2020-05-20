@@ -1,15 +1,24 @@
 /* eslint-disable react/prop-types */
 import { Box, Text } from '@/primitives';
+import { relativeTime } from '@/utils';
 
 const RecursiveComments = ({ comment }) => (
-  <Box borderLeft="1px solid lightGray" mt={2} pl={1}>
-    <Text as="span" mt={3} size="xs">
+  <Box mt={2} pl={1}>
+    <Text darkVariant="gray" mt={3} size="xs">
       {comment.by}
+    </Text>
+    <Text darkVariant="gray" italic ml={1} size="xs">
+      {relativeTime(comment.time)}
     </Text>
     <Text as="p" size="xs">
       {comment.text}
     </Text>
-    <Box ml={3}>
+    <Box
+      borderLeft={1}
+      borderLeftColor="lightGray"
+      borderLeftStyle="solid"
+      pl={3}
+    >
       {comment.kids.length
         ? comment.kids.map((childComment) => {
             return (
