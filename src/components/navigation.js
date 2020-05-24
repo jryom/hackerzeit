@@ -17,10 +17,10 @@ const Ol = styled.ol`
 export default () => (
   <Box bg="accent" maxWidth={8} mx="auto" py={2}>
     <Ol>
-      {PAGES.map((page) => (
-        <Li key={page}>
-          <Link as={`/${page}`} href="/[page]" marginRight={2}>
-            <Text>{page}</Text>
+      {Object.keys(PAGES).map((key) => (
+        <Li key={PAGES[key]}>
+          <Link as={`/${key.toLowerCase()}`} href="/[page]" marginRight={2}>
+            <Text>{PAGES[key]}</Text>
           </Link>
         </Li>
       ))}
