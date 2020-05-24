@@ -17,7 +17,7 @@ export default async (req, res) => {
 
   const ids = await firebase
     .database()
-    .ref(`/v0/${name}`)
+    .ref(`/v0/${name}stories`)
     .once('value')
     .then((snapshot) => snapshot.val());
 

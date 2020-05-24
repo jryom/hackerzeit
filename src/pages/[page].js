@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import useSWR, { useSWRPages } from 'swr';
 
 import {
@@ -10,13 +11,17 @@ import { Box, Ol } from '@/primitives';
 import { fetch } from '@/utils';
 
 const Index = () => {
+  const {
+    query: { page },
+  } = useRouter();
+
   const { pages, isLoadingMore, isReachingEnd, loadMore } = useSWRPages(
-    'best',
+    page,
 
     ({ offset, withSWR }) => {
       const { data } = withSWR(
         // eslint-disable-next-line react-hooks/rules-of-hooks
-        useSWR(`/api/stories?name=beststories&page=${offset || 0}`, fetch)
+        useSWR(`/api/stories?name=${page}&page=${offset || 0}`, fetch)
       );
 
       if (!data) return null;
@@ -33,7 +38,7 @@ const Index = () => {
 
     ({ data }) => data?.nextPage,
 
-    []
+    [page]
   );
 
   return (
