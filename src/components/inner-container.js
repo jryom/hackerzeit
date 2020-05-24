@@ -6,7 +6,6 @@ export default styled('main')`
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  max-width: ${({ theme }) => theme.maxWidth};
   min-height: 100vh;
 
   @media (prefers-color-scheme: dark) {
@@ -14,6 +13,7 @@ export default styled('main')`
   }
 
   ${css({
+    maxWidth: 8,
     paddingX: [4, 6],
     paddingY: [3, 4],
   })}

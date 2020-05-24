@@ -10,6 +10,7 @@ export default {
     gray: '#a6a6a6',
     midGray: '#555',
     darkGray: '#333',
+    accent: '#f9ab77',
   },
   breakpoints: ['50em', '60em'],
   fontSizes: [
@@ -31,6 +32,7 @@ export default {
     '32rem',
     '48rem',
     '64rem',
+    '70rem',
     '96rem',
   ],
   spacing: ['0', '.25rem', '.5rem', '1rem', '2rem', '4rem', '8rem', '16rem'],

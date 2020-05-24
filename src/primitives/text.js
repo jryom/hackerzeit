@@ -36,7 +36,7 @@ const pointerCss = css`
 export default styled('span')`
   ${fontSizeVariants}
   color: ${({ theme, ...props }) =>
-    theme.colors[props.darkVariant] || theme.colors.midGray};
+    theme.colors[props.darkVariant] || theme.colors.darkGray};
   font-family: ${({ serif, theme }) =>
     serif ? theme.fontFamilies.serif : theme.fontFamilies.sans};
   font-weight: ${({ bold }) => (bold ? 600 : 400)};
