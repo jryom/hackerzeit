@@ -3,16 +3,18 @@ import { relativeTime } from '@/utils';
 
 const ItemSubtitle = ({ data }) => (
   <Box opacity="0.6">
-    <Text size="s">{`${data.score} points by`}</Text>
-    <Text hoverUnderline size="s">
-      {` ${data.by}`}
+    <Text size="s">{`${data.score} points by `}</Text>
+    <Text hoverUnderline pointer size="s">
+      {`${data.by}`}
     </Text>
-    <Text size="s">{` | ${relativeTime(data.time)} | `}</Text>
-    <Link href={`/item?id=${data.id}`}>
-      <Text hoverUnderline size="s">
-        {`${data.descendants} comments`}
-      </Text>
-    </Link>
+    <Text size="s">{` | ${relativeTime(data.time)}`}</Text>
+    {data.descendants && (
+      <Link href={`/item?id=${data.id}`}>
+        <Text hoverUnderline size="s">
+          {` | ${data.descendants} comments`}
+        </Text>
+      </Link>
+    )}
   </Box>
 );
 
