@@ -10,7 +10,7 @@ module.exports = {
         React: 'react',
         Fragment: ['react', 'Fragment'],
         Component: ['react', 'Component'],
-      }),
+      })
     );
     config.resolve.alias['@'] = path.resolve(__dirname, 'src');
     return config;

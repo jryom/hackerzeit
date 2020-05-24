@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { ThemeProvider } from 'styled-components';
 
-import { InnerContainer, OuterContainer } from '@/components';
+import { InnerContainer, Navigation, OuterContainer } from '@/components';
 import theme, { GlobalStyle } from '@/styles';
 
 function App({ Component, pageProps }) {
@@ -9,6 +9,7 @@ function App({ Component, pageProps }) {
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <OuterContainer>
+        <Navigation />
         <InnerContainer>
           <Component {...pageProps} />
         </InnerContainer>

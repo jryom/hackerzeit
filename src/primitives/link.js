@@ -2,6 +2,7 @@ import Link from 'next/link';
 import styled from 'styled-components';
 
 const isExternalUrl = (url) => {
+  if (typeof document === 'undefined') return null;
   const a = document.createElement('a');
   a.href = url;
   const aProperties = a.origin + a.pathname + a.search + a.hash;
@@ -13,10 +14,10 @@ const Anchor = styled.a`
   text-decoration: none;
 `;
 
-const StyledLink = ({ children, href }) => {
+const StyledLink = ({ children, href, as }) => {
   if (!isExternalUrl(href)) {
     return (
-      <Link href={href}>
+      <Link as={as} href={href}>
         <Anchor>{children}</Anchor>
       </Link>
     );
@@ -25,7 +26,12 @@ const StyledLink = ({ children, href }) => {
   return <Anchor href={href}>{children}</Anchor>;
 };
 
+StyledLink.defaultProps = {
+  as: null,
+};
+
 StyledLink.propTypes = {
+  as: PropTypes.string,
   children: PropTypes.node.isRequired,
   href: PropTypes.string.isRequired,
 };
