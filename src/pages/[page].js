@@ -19,6 +19,8 @@ const Index = () => {
     page,
 
     ({ offset, withSWR }) => {
+      if (!page) return null;
+
       const { data } = withSWR(
         // eslint-disable-next-line react-hooks/rules-of-hooks
         useSWR(`/api/stories?name=${page}&page=${offset || 0}`, fetch)
@@ -45,7 +47,7 @@ const Index = () => {
     <>
       <Ol>{pages}</Ol>
       <InfiniteScroll
-        isLoading={isLoadingMore}
+        isLoadingMore={isLoadingMore}
         isReachingEnd={isReachingEnd}
         loadMore={loadMore}
       />
