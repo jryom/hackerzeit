@@ -5,8 +5,7 @@ const isExternalUrl = (url) => {
   if (typeof document === 'undefined') return null;
   const a = document.createElement('a');
   a.href = url;
-  const aProperties = a.origin + a.pathname + a.search + a.hash;
-  return aProperties.startsWith(url);
+  return a.hostname !== window.location.hostname;
 };
 
 const Anchor = styled.a`
