@@ -1,22 +1,34 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
+import { LoadButton } from '@/components';
 import { getIntersectionObserver } from '@/utils';
 
 // eslint-disable-next-line react/prop-types
-export default ({ isLoading, canLoadMore, handler }) => {
+export default ({ isLoading, isReachingEnd, loadMore }) => {
   const lastChildRef = useRef();
+  const [isActive, setActive] = useState(false);
 
   useEffect(() => {
     const ref = lastChildRef.current;
 
-    if (canLoadMore && !isLoading) {
-      getIntersectionObserver(handler).observe(ref);
+    if (isActive && !isReachingEnd && !isLoading) {
+      getIntersectionObserver(loadMore).observe(ref);
     }
 
     return () => {
       getIntersectionObserver().disconnect();
     };
-  }, [handler, canLoadMore, isLoading]);
+  }, [isActive, loadMore, isReachingEnd, isLoading]);
 
-  return <div ref={lastChildRef} />;
+  return (
+    <LoadButton
+      ref={lastChildRef}
+      loadMore={loadMore}
+      onClick={() => {
+        setActive(true);
+        loadMore();
+      }}
+      visible={isActive ? false : !isLoading}
+    />
+  );
 };

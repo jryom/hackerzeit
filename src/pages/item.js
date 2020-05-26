@@ -57,7 +57,7 @@ const Item = () => {
       )}
 
       {!isLoadingMore && (
-        <LoadButton isReachingEnd={isReachingEnd} loadMore={loadMore} />
+        <LoadButton isReachingEnd={isReachingEnd} onClick={loadMore} />
       )}
     </>
   ) : null;

@@ -43,14 +43,12 @@ const Index = () => {
 
   return (
     <>
-      <Ol>
-        {pages}
-        <InfiniteScroll
-          canLoadMore={!isReachingEnd}
-          handler={loadMore}
-          isLoading={isLoadingMore}
-        />
-      </Ol>
+      <Ol>{pages}</Ol>
+      <InfiniteScroll
+        isLoading={isLoadingMore}
+        isReachingEnd={isReachingEnd}
+        loadMore={loadMore}
+      />
       {isLoadingMore && (
         <Box
           display="flex"
