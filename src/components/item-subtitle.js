@@ -8,12 +8,15 @@ const ItemSubtitle = ({ data }) => (
       {`${data.by}`}
     </Text>
     <Text size="s">{` | ${relativeTime(data.time)}`}</Text>
-    {data.descendants && (
-      <Link href={`/item?id=${data.id}`}>
-        <Text hoverUnderline size="s">
-          {` | ${data.descendants} comments`}
-        </Text>
-      </Link>
+    {typeof data.descendants !== 'undefined' && (
+      <>
+        <Text size="s">{` | `}</Text>
+        <Link href={`/item?id=${data.id}`}>
+          <Text hoverUnderline size="s">
+            {`${data.descendants} comments`}
+          </Text>
+        </Link>
+      </>
     )}
   </Box>
 );
@@ -21,7 +24,7 @@ const ItemSubtitle = ({ data }) => (
 ItemSubtitle.propTypes = {
   data: PropTypes.shape({
     by: PropTypes.string.isRequired,
-    descendants: PropTypes.number.isRequired,
+    descendants: PropTypes.number,
     id: PropTypes.number.isRequired,
     kids: PropTypes.array,
     score: PropTypes.number.isRequired,
