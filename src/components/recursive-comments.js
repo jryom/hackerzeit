@@ -7,7 +7,7 @@ const RecursiveComments = ({ comment }) => (
     <Text darkVariant="gray" size="xs">
       {comment.by}
     </Text>
-    <Text darkVariant="gray" italic ml="0.4em" size="xs">
+    <Text darkVariant="midGray" italic ml="0.4em" size="s">
       {relativeTime(comment.time)}
     </Text>
     <Text

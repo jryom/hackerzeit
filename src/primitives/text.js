@@ -36,7 +36,7 @@ const pointerCss = css`
 export default styled('span')`
   ${fontSizeVariants}
   color: ${({ theme, ...props }) =>
-    theme.colors[props.darkVariant] || theme.colors.darkGray};
+    theme.colors[props.lightVariant] || theme.colors.darkGray};
   font-family: ${({ serif, theme }) =>
     serif ? theme.fontFamilies.serif : theme.fontFamilies.sans};
   font-weight: ${({ bold }) => (bold ? 600 : 400)};
@@ -46,7 +46,7 @@ export default styled('span')`
 
   @media (prefers-color-scheme: dark) {
     color: ${({ theme, ...props }) =>
-      theme.colors[props.lightVariant] || theme.colors.nearWhite};
+      theme.colors[props.darkVariant] || theme.colors.lightGray};
   }
 
   ${({ hoverUnderline }) => (hoverUnderline ? hoverUnderlineCss : '')}

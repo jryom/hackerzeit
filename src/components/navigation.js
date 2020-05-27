@@ -24,7 +24,7 @@ const Li = styled.li`
     width: 100%;
 
     @media (prefers-color-scheme: dark) {
-      color: ${({ theme }) => theme.colors.nearWhite};
+      background: ${({ theme }) => theme.colors.nearWhite};
     }
   }
 `;

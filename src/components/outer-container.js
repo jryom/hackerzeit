@@ -6,6 +6,6 @@ export default styled('div')`
   transition: background-color 0.5s;
 
   @media (prefers-color-scheme: dark) {
-    background-color: ${({ theme }) => theme.colors.darkGray};
+    background-color: ${({ theme }) => theme.colors.black};
   }
 `;

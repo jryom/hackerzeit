@@ -8,9 +8,10 @@ export default {
     nearWhite: '#f1f1f1',
     lightGray: '#ebebeb',
     gray: '#a6a6a6',
-    midGray: '#555',
+    midGray: '#868686',
     darkGray: '#2e2e2e',
-    accent: '#ff9752c4',
+    black: '#242424',
+    accent: '#fb9a5ac7',
   },
   breakpoints: ['50em', '60em'],
   fontSizes: [

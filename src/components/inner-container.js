@@ -9,7 +9,7 @@ export default styled('main')`
   min-height: 100vh;
 
   @media (prefers-color-scheme: dark) {
-    background-color: ${({ theme }) => theme.colors.midGray};
+    background-color: ${({ theme }) => theme.colors.darkGray};
   }
 
   ${css({
