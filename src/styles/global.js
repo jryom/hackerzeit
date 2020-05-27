@@ -36,6 +36,15 @@ body {
   line-height: 1.5;
 }
 
+blockquote {
+  color: ${({ theme }) => theme.colors.midGray};
+  font-style: italic;
+
+  @media (prefers-color-scheme: dark) {
+    color: ${({ theme }) => theme.colors.nearWhite};
+  }
+}
+
 a:not([class]) {
   color: ${({ theme }) => theme.colors.accent};
   font-weight: 500;
