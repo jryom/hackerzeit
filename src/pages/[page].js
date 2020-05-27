@@ -8,7 +8,6 @@ import {
   LoadingIndicator,
 } from '@/components';
 import { Box, Ol } from '@/primitives';
-import { fetch } from '@/utils';
 
 const Index = () => {
   const {
@@ -23,7 +22,7 @@ const Index = () => {
 
       const { data } = withSWR(
         // eslint-disable-next-line react-hooks/rules-of-hooks
-        useSWR(`/api/stories?name=${page}&page=${offset || 0}`, fetch)
+        useSWR(`/api/stories?name=${page}&page=${offset || 0}`)
       );
 
       if (!data) return null;

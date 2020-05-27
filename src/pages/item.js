@@ -9,12 +9,11 @@ import {
   RecursiveComments,
 } from '@/components';
 import { Box } from '@/primitives';
-import { fetch } from '@/utils';
 
 const Item = () => {
   const router = useRouter();
   const { id } = router.query;
-  const { data } = useSWR(`/api/item?id=${id}`, fetch);
+  const { data } = useSWR(`/api/item?id=${id}`);
 
   const { pages, isLoadingMore, isReachingEnd, loadMore } = useSWRPages(
     `item-${id}`,
@@ -22,7 +21,7 @@ const Item = () => {
     ({ offset, withSWR }) => {
       const { data: comment } = withSWR(
         // eslint-disable-next-line react-hooks/rules-of-hooks
-        useSWR(`/api/comments?id=${id}&page=${offset || 0}`, fetch)
+        useSWR(`/api/comments?id=${id}&page=${offset || 0}`)
       );
 
       if (!comment?.kids.length) {
