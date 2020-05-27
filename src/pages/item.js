@@ -2,9 +2,9 @@ import { useRouter } from 'next/router';
 import useSWR, { useSWRPages } from 'swr';
 
 import {
+  InfiniteScroll,
   ItemSubtitle,
   ItemTitle,
-  LoadButton,
   LoadingIndicator,
   RecursiveComments,
 } from '@/components';
@@ -44,6 +44,12 @@ const Item = () => {
         {pages}
       </Box>
 
+      <InfiniteScroll
+        isLoadingMore={isLoadingMore}
+        isReachingEnd={isReachingEnd}
+        loadMore={loadMore}
+      />
+
       {isLoadingMore && (
         <Box
           display="flex"
@@ -53,10 +59,6 @@ const Item = () => {
         >
           <LoadingIndicator />
         </Box>
-      )}
-
-      {!isLoadingMore && (
-        <LoadButton isReachingEnd={isReachingEnd} onClick={loadMore} />
       )}
     </>
   ) : null;

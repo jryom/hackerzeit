@@ -48,7 +48,8 @@ export default async (req, res) => {
 
   const item = await fetchSnapshot(id).then((snapshot) => snapshot.val());
   const kids = await recursiveFetchKids(item?.kids, Number(page), 1);
+  const nextPage = +page < item?.kids?.length ? +page + 1 : null;
 
   res.statusCode = 200;
-  res.end(JSON.stringify({ nextPage: Number(page) + 1, kids }));
+  res.end(JSON.stringify({ nextPage, kids }));
 };
