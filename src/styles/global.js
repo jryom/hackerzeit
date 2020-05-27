@@ -41,6 +41,11 @@ a:not([class]) {
   font-weight: 500;
 }
 
+pre {
+  white-space: pre-wrap;
+  word-break: keep-all;
+}
+
 input,
 button,
 textarea,
