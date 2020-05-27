@@ -3,11 +3,11 @@ import { Box, Text } from '@/primitives';
 import { parseComment, relativeTime } from '@/utils';
 
 const RecursiveComments = ({ comment }) => (
-  <Box mt={2}>
-    <Text darkVariant="gray" mt={3} size="xs">
+  <Box mt={[1, 2]}>
+    <Text darkVariant="gray" size="xs">
       {comment.by}
     </Text>
-    <Text darkVariant="gray" italic ml={1} size="xs">
+    <Text darkVariant="gray" italic ml="0.4em" size="xs">
       {relativeTime(comment.time)}
     </Text>
     <Text
@@ -24,7 +24,7 @@ const RecursiveComments = ({ comment }) => (
       borderLeft={1}
       borderLeftColor="lightGray"
       borderLeftStyle="solid"
-      pl={3}
+      pl={[2, 3]}
     >
       {comment.kids.length
         ? comment.kids.map((childComment) => {
