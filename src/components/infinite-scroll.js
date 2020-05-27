@@ -4,8 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import { LoadButton } from '@/components';
 import { getIntersectionObserver } from '@/utils';
 
-// eslint-disable-next-line react/prop-types
-export default ({ isLoadingMore, isReachingEnd, loadMore }) => {
+const InfiniteScroll = ({ isLoadingMore, isReachingEnd, loadMore }) => {
   const lastChildRef = useRef();
   const [isActive, setActive] = useState(false);
 
@@ -35,3 +34,11 @@ export default ({ isLoadingMore, isReachingEnd, loadMore }) => {
     />
   );
 };
+
+InfiniteScroll.propTypes = {
+  isLoadingMore: PropTypes.bool.isRequired,
+  isReachingEnd: PropTypes.bool.isRequired,
+  loadMore: PropTypes.func.isRequired,
+};
+
+export default InfiniteScroll;
