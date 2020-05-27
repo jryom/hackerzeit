@@ -10,10 +10,7 @@ const processingInstructions = [
     },
   },
   {
-    shouldProcessNode: (node) => {
-      console.log(node);
-      return true;
-    },
+    shouldProcessNode: () => true,
     processNode: processNodeDefinitions.processDefaultNode,
   },
 ];
