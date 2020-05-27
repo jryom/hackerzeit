@@ -3,8 +3,8 @@ import { Box, Text } from '@/primitives';
 import { parseComment, relativeTime } from '@/utils';
 
 const RecursiveComments = ({ comment }) => (
-  <Box mt={[1, 2]}>
-    <Text darkVariant="gray" size="xs">
+  <Box mt={[2, 3]}>
+    <Text darkVariant="gray" size="s">
       {comment.by}
     </Text>
     <Text darkVariant="midGray" italic ml="0.4em" size="s">
@@ -16,7 +16,7 @@ const RecursiveComments = ({ comment }) => (
         overflow-wrap: anywhere;
       `}
       lineHeight="1.4"
-      size="xs"
+      size="s"
     >
       {parseComment(comment.text)}
     </Text>

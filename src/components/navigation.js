@@ -19,9 +19,9 @@ const Li = styled.li`
     content: '';
     display: ${({ active }) => (active ? 'block' : 'none')};
     height: 2px;
-    left: 0;
+    left: -5%;
     position: absolute;
-    width: 100%;
+    width: 110%;
 
     @media (prefers-color-scheme: dark) {
       background: ${({ theme }) => theme.colors.nearWhite};
@@ -30,6 +30,9 @@ const Li = styled.li`
 `;
 const Ol = styled.ol`
   list-style: none;
+  ${css({
+    margin: [0, 1],
+  })}
 `;
 
 export default () => {

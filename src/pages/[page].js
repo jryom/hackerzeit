@@ -44,7 +44,7 @@ const Index = () => {
 
   return (
     <>
-      <Ol>{pages}</Ol>
+      <Ol marginX={3}>{pages}</Ol>
       <InfiniteScroll
         isLoadingMore={isLoadingMore}
         isReachingEnd={isReachingEnd}

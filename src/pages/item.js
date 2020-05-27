@@ -44,12 +44,6 @@ const Item = () => {
         {pages}
       </Box>
 
-      <InfiniteScroll
-        isLoadingMore={isLoadingMore}
-        isReachingEnd={isReachingEnd}
-        loadMore={loadMore}
-      />
-
       {isLoadingMore && (
         <Box
           display="flex"
@@ -60,6 +54,12 @@ const Item = () => {
           <LoadingIndicator />
         </Box>
       )}
+
+      <InfiniteScroll
+        isLoadingMore={isLoadingMore}
+        isReachingEnd={isReachingEnd}
+        loadMore={loadMore}
+      />
     </>
   ) : null;
 };
