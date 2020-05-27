@@ -3,7 +3,7 @@ import { Box, Text } from '@/primitives';
 import { relativeTime } from '@/utils';
 
 const RecursiveComments = ({ comment }) => (
-  <Box mt={2} pl={1}>
+  <Box mt={2}>
     <Text darkVariant="gray" mt={3} size="xs">
       {comment.by}
     </Text>

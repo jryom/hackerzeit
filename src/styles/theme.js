@@ -9,8 +9,8 @@ export default {
     lightGray: '#ebebeb',
     gray: '#a6a6a6',
     midGray: '#555',
-    darkGray: '#333',
-    accent: '#f9ab77',
+    darkGray: '#2e2e2e',
+    accent: '#ff9752c4',
   },
   breakpoints: ['50em', '60em'],
   fontSizes: [

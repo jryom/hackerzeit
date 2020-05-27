@@ -37,7 +37,8 @@ body {
 }
 
 a:not([class]) {
-  text-decoration-skip-ink: auto;
+  color: ${({ theme }) => theme.colors.accent};
+  font-weight: 500;
 }
 
 input,
