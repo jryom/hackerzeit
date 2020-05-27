@@ -8,5 +8,4 @@ export default styled.div`
   ${layout}
   ${position}
   ${space}
-  ${({ visibility }) => `visibility: ${visibility}`}
 `;

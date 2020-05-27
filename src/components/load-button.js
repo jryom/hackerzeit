@@ -1,11 +1,27 @@
+import css from '@styled-system/css';
+import styled from 'styled-components';
+
 import { Box, Text } from '@/primitives';
+
+const ButtonContainer = styled(Box)`
+  ${css({
+    backgroundColor: 'lightGray',
+  })}
+
+  @media (prefers-color-scheme: dark) {
+    ${css({
+      backgroundColor: 'midGray',
+    })}
+  }
+
+  ${({ visibility }) => `visibility: ${visibility}`}
+`;
 
 const LoadButton = React.forwardRef(({ onClick, visible }, ref) => {
   return (
-    <Box
+    <ButtonContainer
       ref={ref}
       as="button"
-      bg="lightGray"
       border="none"
       display="block"
       mx="auto"
@@ -15,17 +31,13 @@ const LoadButton = React.forwardRef(({ onClick, visible }, ref) => {
       visibility={visible ? 'initial' : 'hidden'}
     >
       <Text size="xs">Load more</Text>
-    </Box>
+    </ButtonContainer>
   );
 });
 
 LoadButton.propTypes = {
   onClick: PropTypes.func.isRequired,
-  visible: PropTypes.bool,
-};
-
-LoadButton.defaultProps = {
-  visible: true,
+  visible: PropTypes.bool.isRequired,
 };
 
 export default LoadButton;
