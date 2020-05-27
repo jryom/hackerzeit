@@ -10,9 +10,7 @@ const RecursiveComments = ({ comment }) => (
     <Text darkVariant="gray" italic ml={1} size="xs">
       {relativeTime(comment.time)}
     </Text>
-    <Text as="p" size="xs">
-      {comment.text}
-    </Text>
+    <Text as="p" dangerouslySetInnerHTML={{ __html: comment.text }} size="xs" />
     <Box
       borderLeft={1}
       borderLeftColor="lightGray"
