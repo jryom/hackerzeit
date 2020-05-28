@@ -34,6 +34,7 @@ export default class MyDocument extends Document {
       <Html lang="en">
         <Head>
           <title>Hacker Zeit</title>
+          <meta content="Hacker News, but slower!" name="description" />
         </Head>
         <body>
           <Main />

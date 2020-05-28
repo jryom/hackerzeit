@@ -42,6 +42,7 @@ const Item = () => {
       <Head>
         <title>{`Hacker Zeit${data?.title ? `: ${data.title}` : ''}`}</title>
       </Head>
+
       <Box>
         <ItemTitle data={data} />
         <ItemSubtitle data={data} />

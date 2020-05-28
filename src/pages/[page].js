@@ -72,13 +72,16 @@ const Index = () => {
           {`Hacker Zeit${page ? `: ${PAGES[page.toUpperCase()]}` : ''}`}
         </title>
       </Head>
+
       <Ol>{pages}</Ol>
+
+      {isLoadingMore && <LoadingIndicator />}
+
       <InfiniteScroll
         isLoadingMore={isLoadingMore}
         isReachingEnd={isReachingEnd}
         loadMore={loadMore}
       />
-      {isLoadingMore && <LoadingIndicator />}
     </>
   );
 };
