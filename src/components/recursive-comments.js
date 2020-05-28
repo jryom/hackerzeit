@@ -1,10 +1,14 @@
 import { useState } from 'react';
+import { useSwipeable } from 'react-swipeable';
 
 import { Box, Text } from '@/primitives';
 import { parseComment, relativeTime } from '@/utils';
 
 const RecursiveComments = ({ comment }) => {
   const [collapsed, setCollapsed] = useState(false);
+  const swipeHandlers = useSwipeable({
+    onSwiped: () => setCollapsed(!collapsed),
+  });
 
   return (
     <Box mt={[2, 3]}>
@@ -40,6 +44,7 @@ const RecursiveComments = ({ comment }) => {
       {!collapsed && (
         <>
           <Text
+            {...swipeHandlers}
             as="div"
             css={`
               overflow-wrap: break-word;
