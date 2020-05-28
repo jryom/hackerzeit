@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import { useRouter } from 'next/router';
 import useSWR, { useSWRPages } from 'swr';
 
@@ -38,6 +39,9 @@ const Item = () => {
 
   return data ? (
     <>
+      <Head>
+        <title>{`Hacker Zeit: ${data.title}`}</title>
+      </Head>
       <Box marginBottom={[3, 4]}>
         <ItemTitle data={data} />
         <ItemSubtitle data={data} />

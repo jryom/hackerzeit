@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import { useRouter } from 'next/router';
 import styled from 'styled-components';
 import useSWR, { useSWRPages } from 'swr';
@@ -8,6 +9,7 @@ import {
   ItemTitle,
   LoadingIndicator,
 } from '@/components';
+import { PAGES } from '@/constants';
 import { Box, Ol } from '@/primitives';
 
 const Li = styled(Box).attrs({ as: 'li' })`
@@ -65,6 +67,9 @@ const Index = () => {
 
   return (
     <>
+      <Head>
+        <title>{`Hacker Zeit: ${PAGES[page.toUpperCase()]}`}</title>
+      </Head>
       <Ol>{pages}</Ol>
       <InfiniteScroll
         isLoadingMore={isLoadingMore}
