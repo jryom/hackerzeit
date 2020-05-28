@@ -7,7 +7,7 @@ import { parseComment, relativeTime } from '@/utils';
 const RecursiveComments = ({ comment }) => {
   const [collapsed, setCollapsed] = useState(false);
   const swipeHandlers = useSwipeable({
-    onSwiped: () => setCollapsed(!collapsed),
+    onSwiped: ({ absX, absY }) => absX > absY && setCollapsed(!collapsed),
   });
 
   return (
