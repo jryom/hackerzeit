@@ -68,7 +68,9 @@ const Index = () => {
   return (
     <>
       <Head>
-        <title>{`Hacker Zeit: ${PAGES[page.toUpperCase()]}`}</title>
+        <title>
+          {`Hacker Zeit${page ? `: ${PAGES[page.toUpperCase()]}` : ''}`}
+        </title>
       </Head>
       <Ol>{pages}</Ol>
       <InfiniteScroll

@@ -40,7 +40,7 @@ const Item = () => {
   return data ? (
     <>
       <Head>
-        <title>{`Hacker Zeit: ${data.title}`}</title>
+        <title>{`Hacker Zeit${data?.title ? `: ${data.title}` : ''}`}</title>
       </Head>
       <Box marginBottom={[3, 4]}>
         <ItemTitle data={data} />
