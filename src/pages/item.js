@@ -29,7 +29,9 @@ const Item = () => {
         return null;
       }
 
-      return comment.kids.map((kid) => <RecursiveComments comment={kid} />);
+      return comment.kids.map((kid) => (
+        <RecursiveComments key={kid.id} comment={kid} />
+      ));
     },
 
     ({ data: comment }) => comment.nextPage,
