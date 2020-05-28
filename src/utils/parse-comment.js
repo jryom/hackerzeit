@@ -6,7 +6,11 @@ const processingInstructions = [
   {
     shouldProcessNode: (node) => node?.data?.startsWith('>'),
     processNode: (node, children, index) => {
-      return React.createElement('blockquote', { key: index }, node.data);
+      return React.createElement(
+        'span',
+        { key: index, className: 'quote' },
+        node.data
+      );
     },
   },
   {

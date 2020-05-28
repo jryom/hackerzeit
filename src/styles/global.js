@@ -35,7 +35,7 @@ body {
   line-height: 1.5;
 }
 
-blockquote {
+  .quote {
   color: ${({ theme }) => theme.colors.midGray};
   font-style: italic;
 
