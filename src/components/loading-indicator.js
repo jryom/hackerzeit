@@ -1,5 +1,5 @@
+import css from '@styled-system/css';
 import styled, { keyframes } from 'styled-components';
-import { space } from 'styled-system';
 
 const darkPulsate = keyframes`
   from {
@@ -31,6 +31,10 @@ export default styled.div`
   margin: 0 auto;
   position: relative;
   width: 8px;
+
+  ${css({
+    marginTop: [3, 4],
+  })}
 
   &:after,
   &:before {
@@ -64,6 +68,4 @@ export default styled.div`
       animation-name: ${lightPulsate};
     }
   }
-
-  ${space}
 `;

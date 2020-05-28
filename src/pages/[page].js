@@ -78,16 +78,7 @@ const Index = () => {
         isReachingEnd={isReachingEnd}
         loadMore={loadMore}
       />
-      {isLoadingMore && (
-        <Box
-          display="flex"
-          flex="1"
-          flexDirection="column"
-          justifyContent="center"
-        >
-          <LoadingIndicator my={[3, 4]} />
-        </Box>
-      )}
+      {isLoadingMore && <LoadingIndicator />}
     </>
   );
 };

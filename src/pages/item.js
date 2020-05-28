@@ -42,22 +42,13 @@ const Item = () => {
       <Head>
         <title>{`Hacker Zeit${data?.title ? `: ${data.title}` : ''}`}</title>
       </Head>
-      <Box marginBottom={[3, 4]}>
+      <Box>
         <ItemTitle data={data} />
         <ItemSubtitle data={data} />
         {pages}
       </Box>
 
-      {isLoadingMore && (
-        <Box
-          display="flex"
-          flex="1"
-          flexDirection="column"
-          justifyContent="center"
-        >
-          <LoadingIndicator />
-        </Box>
-      )}
+      {isLoadingMore && <LoadingIndicator />}
 
       <InfiniteScroll
         isLoadingMore={isLoadingMore}
