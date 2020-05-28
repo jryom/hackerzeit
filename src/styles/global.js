@@ -40,7 +40,7 @@ body {
   font-style: italic;
 
   @media (prefers-color-scheme: dark) {
-    color: ${({ theme }) => theme.colors.nearWhite};
+    color: ${({ theme }) => theme.colors.gray};
   }
 }
 
