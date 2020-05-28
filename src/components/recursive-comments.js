@@ -1,8 +1,16 @@
 import { useState } from 'react';
 import { useSwipeable } from 'react-swipeable';
+import styled from 'styled-components';
 
 import { Box, Text } from '@/primitives';
 import { parseComment, relativeTime } from '@/utils';
+
+const BorderedCommentBox = styled(Box)`
+  border-left-color: ${({ theme }) => theme.colors.lightGray};
+  @media (prefers-color-scheme: dark) {
+    border-left-color: ${({ theme }) => theme.colors.midGray}77;
+  }
+`;
 
 const RecursiveComments = ({ comment }) => {
   const [collapsed, setCollapsed] = useState(false);
@@ -59,9 +67,8 @@ const RecursiveComments = ({ comment }) => {
           >
             {parseComment(comment.text)}
           </Text>
-          <Box
+          <BorderedCommentBox
             borderLeft={1}
-            borderLeftColor="lightGray"
             borderLeftStyle="solid"
             pl={[2, 3]}
           >
@@ -77,7 +84,7 @@ const RecursiveComments = ({ comment }) => {
                   );
                 })
               : null}
-          </Box>
+          </BorderedCommentBox>
         </>
       )}
     </Box>
