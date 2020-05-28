@@ -4,10 +4,10 @@ import { parseComment, relativeTime } from '@/utils';
 
 const RecursiveComments = ({ comment }) => (
   <Box mt={[2, 3]}>
-    <Text darkVariant="gray" size="s">
+    <Text darkVariant="gray" lightVariant="midGray" size="s">
       {comment.by}
     </Text>
-    <Text darkVariant="midGray" italic ml="0.4em" size="s">
+    <Text darkVariant="midGray" italic lightVariant="gray" ml="0.4em" size="s">
       {relativeTime(comment.time)}
     </Text>
     <Text
