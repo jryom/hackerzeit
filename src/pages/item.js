@@ -45,11 +45,11 @@ const Item = () => {
         <title>{`Hacker Zeit${data?.title ? `: ${data.title}` : ''}`}</title>
       </Head>
 
-      <Box>
+      <Box mb={[1, 2]}>
         <ItemTitle data={data} />
         <ItemSubtitle data={data} />
-        {pages}
       </Box>
+      {pages}
 
       {isLoadingMore && <LoadingIndicator />}
 

@@ -1,5 +1,12 @@
 import styled, { css } from 'styled-components';
-import { color, position, space, typography, variant } from 'styled-system';
+import {
+  color,
+  layout,
+  position,
+  space,
+  typography,
+  variant,
+} from 'styled-system';
 
 const fontSizeVariants = () =>
   variant({
@@ -33,6 +40,10 @@ const pointerCss = css`
   cursor: pointer;
 `;
 
+const userSelectNoneCss = css`
+  user-select: none;
+`;
+
 export default styled('span')`
   ${fontSizeVariants}
   color: ${({ theme, ...props }) =>
@@ -50,9 +61,11 @@ export default styled('span')`
   }
 
   ${({ hoverUnderline }) => (hoverUnderline ? hoverUnderlineCss : '')}
+  ${({ userSelectNone }) => (userSelectNone ? userSelectNoneCss : '')}
   ${({ pointer }) => (pointer ? pointerCss : '')}
   ${color}
   ${position}
   ${space}
   ${typography}
+  ${layout}
 `;
