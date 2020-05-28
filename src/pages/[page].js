@@ -1,4 +1,5 @@
 import { useRouter } from 'next/router';
+import styled from 'styled-components';
 import useSWR, { useSWRPages } from 'swr';
 
 import {
@@ -8,6 +9,19 @@ import {
   LoadingIndicator,
 } from '@/components';
 import { Box, Ol } from '@/primitives';
+
+const Li = styled(Box).attrs({ as: 'li' })`
+  counter-increment: story;
+  white-space: nowrap;
+  width: calc(100% - 1.8em);
+
+  &::before {
+    content: counter(story) '.';
+    display: inline-block;
+    vertical-align: top;
+    width: 1.8em;
+  }
+`;
 
 const Index = () => {
   const {
@@ -29,10 +43,17 @@ const Index = () => {
 
       return data.stories.map((story) => {
         return (
-          <Box key={story.id} as="li" mb={[3, 4]} pl={[1, 2]}>
-            <ItemTitle data={story} />
-            <ItemSubtitle data={story} />
-          </Box>
+          <Li key={story.id} mb={[3, 4]}>
+            <Box
+              css={`
+                display: inline-block;
+                white-space: initial;
+              `}
+            >
+              <ItemTitle data={story} />
+              <ItemSubtitle data={story} />
+            </Box>
+          </Li>
         );
       });
     },
@@ -44,7 +65,7 @@ const Index = () => {
 
   return (
     <>
-      <Ol marginX={3}>{pages}</Ol>
+      <Ol>{pages}</Ol>
       <InfiniteScroll
         isLoadingMore={isLoadingMore}
         isReachingEnd={isReachingEnd}
