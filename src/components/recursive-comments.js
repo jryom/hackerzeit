@@ -13,7 +13,8 @@ const RecursiveComments = ({ comment }) => (
     <Text
       as="div"
       css={`
-        overflow-wrap: anywhere;
+        overflow-wrap: break-word;
+        hyphens: auto;
 
         & > * {
           margin-top: 0.3em;
