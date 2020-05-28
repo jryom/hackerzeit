@@ -14,6 +14,10 @@ const RecursiveComments = ({ comment }) => (
       as="div"
       css={`
         overflow-wrap: anywhere;
+
+        & > * {
+          margin-top: 0.3em;
+        }
       `}
       lineHeight="1.4"
       size="s"
