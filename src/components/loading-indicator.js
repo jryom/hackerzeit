@@ -3,21 +3,21 @@ import styled, { keyframes } from 'styled-components';
 
 const darkPulsate = keyframes`
   from {
-    background: rgba(0,0,0,0.45);
+    background-color: rgba(0,0,0,0.45);
   }
 
   to {
-    background: rgba(0,0,0,0.1);
+    background-color: rgba(0,0,0,0.1);
   }
 `;
 
 const lightPulsate = keyframes`
   from {
-    background: rgba(255,255,255,0.45);
+    background-color: rgba(255,255,255,0.45);
   }
 
   to {
-    background: rgba(255,255,255,0.05);
+    background-color: rgba(255,255,255,0.05);
   }
 `;
 
@@ -27,6 +27,7 @@ export default styled.div`
   animation-duration: 0.3s;
   animation-iteration-count: infinite;
   animation-name: ${darkPulsate};
+  background-color: rgba(0, 0, 0, 0.1);
   height: 8px;
   margin: 0 auto;
   position: relative;
@@ -42,6 +43,7 @@ export default styled.div`
     animation-duration: 0.3s;
     animation-iteration-count: infinite;
     animation-name: ${darkPulsate};
+    background-color: rgba(0, 0, 0, 0.1);
     content: '';
     display: block;
     height: 8px;
@@ -62,10 +64,12 @@ export default styled.div`
 
   @media (prefers-color-scheme: dark) {
     animation-name: ${lightPulsate};
+    background-color: rgba(255, 255, 255, 0.1);
 
     &:after,
     &:before {
       animation-name: ${lightPulsate};
+      background-color: rgba(255, 255, 255, 0.1);
     }
   }
 `;
