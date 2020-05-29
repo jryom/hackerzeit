@@ -1,7 +1,7 @@
-import { useState } from 'react';
 import { useSwipeable } from 'react-swipeable';
 import styled from 'styled-components';
 
+import { useLocalStorage } from '@/hooks';
 import { Box, Text } from '@/primitives';
 import { parseComment, relativeTime } from '@/utils';
 
@@ -13,7 +13,7 @@ const BorderedCommentBox = styled(Box)`
 `;
 
 const RecursiveComments = ({ comment }) => {
-  const [collapsed, setCollapsed] = useState(false);
+  const [collapsed, setCollapsed] = useLocalStorage(comment?.id, false);
   const swipeHandlers = useSwipeable({
     onSwiped: ({ absX, absY }) => absX > absY && setCollapsed(!collapsed),
   });
@@ -94,6 +94,7 @@ const RecursiveComments = ({ comment }) => {
 RecursiveComments.propTypes = {
   comment: PropTypes.shape({
     by: PropTypes.string,
+    id: PropTypes.number,
     kids: PropTypes.array,
     text: PropTypes.string,
     time: PropTypes.number,
