@@ -7,6 +7,7 @@ import { Box, Link, Text } from '@/primitives';
 
 const Li = styled.li`
   display: inline;
+  opacity: 0.8;
   position: relative;
 
   ${css({
@@ -44,7 +45,9 @@ export default () => {
         {Object.keys(PAGES).map((key) => (
           <Li key={PAGES[key]} active={asPath.includes(key.toLowerCase())}>
             <Link as={`/${key.toLowerCase()}`} href="/[page]">
-              <Text size="s">{PAGES[key]}</Text>
+              <Text fontWeight={1} opacity="1" size="s">
+                {PAGES[key]}
+              </Text>
             </Link>
           </Li>
         ))}
