@@ -33,6 +33,11 @@ body {
   scroll-behavior: smooth;
   text-rendering: optimizeLegibility;
   line-height: 1.5;
+  background-color: ${({ theme }) => theme.colors.nearWhite};
+
+  @media (prefers-color-scheme: dark) {
+    background-color: ${({ theme }) => theme.colors.black};
+  }
 }
 
   .quote {
