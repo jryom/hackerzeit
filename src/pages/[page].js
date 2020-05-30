@@ -17,11 +17,14 @@ const Li = styled(Box).attrs({ as: 'li' })`
   white-space: nowrap;
   width: calc(100% - 1.8em);
 
-  &::before {
-    content: counter(story) '.';
-    display: inline-block;
-    vertical-align: top;
-    width: 1.8em;
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints[0]}) {
+    &::before {
+      content: counter(story) '.';
+      display: inline-block;
+      line-height: 1.78;
+      vertical-align: top;
+      width: 1.8em;
+    }
   }
 `;
 
