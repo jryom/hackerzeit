@@ -45,7 +45,7 @@ export default () => {
         {Object.keys(PAGES).map((key) => (
           <Li key={PAGES[key]} active={asPath.includes(key.toLowerCase())}>
             <Link as={`/${key.toLowerCase()}`} href="/[page]">
-              <Text fontWeight={1} opacity="1" size="s">
+              <Text fontWeight="500" opacity="1" size="s">
                 {PAGES[key]}
               </Text>
             </Link>

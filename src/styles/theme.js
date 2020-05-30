@@ -14,15 +14,8 @@ export default {
     accent: '#fb9a5ac7',
   },
   breakpoints: ['50em', '60em'],
-  fontSizes: [
-    '.75rem',
-    '.875rem',
-    '1rem',
-    '1.25rem',
-    '1.5rem',
-    '2.25rem',
-    '3rem',
-  ],
+  fontSizes: ['0.889rem', '1rem', '1.125rem', '1.2rem', '1.266rem'],
+  lineHeights: ['1em', '1.25em', '1.5em'],
   maxWidth: '70rem',
   sizes: [
     '1rem',

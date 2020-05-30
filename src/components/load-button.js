@@ -24,14 +24,15 @@ const LoadButton = React.forwardRef(({ onClick, visible }, ref) => {
       as="button"
       border="none"
       display="block"
-      marginTop={[3, 4]}
+      marginBottom={[3, 4]}
+      marginTop={[4, 5]}
       mx="auto"
       onClick={onClick}
       px={3}
       py={2}
       visibility={visible ? 'initial' : 'hidden'}
     >
-      <Text size="xs">Load more</Text>
+      <Text size="s">Load more</Text>
     </ButtonContainer>
   );
 });

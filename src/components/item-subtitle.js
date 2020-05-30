@@ -2,17 +2,17 @@ import { Box, Link, Text } from '@/primitives';
 import { relativeTime } from '@/utils';
 
 const ItemSubtitle = ({ data }) => (
-  <Box opacity="0.6">
+  <Box lineHeight={1} marginY={[1, 1]} opacity="0.6">
     <Text size="s">{`${data.score} points by `}</Text>
     <Text hoverUnderline pointer size="s">
       {`${data.by}`}
     </Text>
-    <Text size="s">{` | ${relativeTime(data.time)}`}</Text>
+    <Text size="s">{` ${relativeTime(data.time)}`}</Text>
     {typeof data.descendants !== 'undefined' && (
       <>
         <Text size="s">{` | `}</Text>
         <Link href={`/item?id=${data.id}`}>
-          <Text hoverUnderline size="s">
+          <Text hoverUnderline noWrap size="s">
             {`${data.descendants} comments`}
           </Text>
         </Link>

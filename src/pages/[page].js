@@ -48,12 +48,13 @@ const Index = () => {
 
       return data.stories.map((story) => {
         return (
-          <Li key={story.id} mb={[3, 4]}>
+          <Li key={story.id} mb={[3, 4]} pt={[1, 2]}>
             <Box
               css={`
                 display: inline-block;
                 white-space: initial;
               `}
+              lineHeight={[1, 2]}
             >
               <ItemTitle data={story} />
               <ItemSubtitle data={story} />

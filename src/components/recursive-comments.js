@@ -19,36 +19,38 @@ const RecursiveComments = ({ comment }) => {
   });
 
   return (
-    <Box mt={[2, 3]}>
-      <Text
-        bold
-        darkVariant="midGray"
-        display="inline-block"
-        lightVariant="gray"
-        mono
-        onClick={() => {
-          setCollapsed(!collapsed);
-        }}
-        pointer
-        size="xs"
-        userSelectNone
-        width="1.8em"
-      >
-        {collapsed ? '[+] ' : '[—] '}
-      </Text>
-      <Text darkVariant="gray" lightVariant="midGray" size="s" userSelectNone>
-        {comment.by}
-      </Text>
-      <Text
-        darkVariant="midGray"
-        italic
-        lightVariant="gray"
-        ml="0.4em"
-        size="s"
-        userSelectNone
-      >
-        {relativeTime(comment.time)}
-      </Text>
+    <Box mt={3}>
+      <Box mb={1}>
+        <Text
+          bold
+          darkVariant="midGray"
+          display="inline-block"
+          lightVariant="gray"
+          mono
+          onClick={() => {
+            setCollapsed(!collapsed);
+          }}
+          pointer
+          size="s"
+          userSelectNone
+          width="1.8em"
+        >
+          {collapsed ? '[+] ' : '[—] '}
+        </Text>
+        <Text darkVariant="gray" lightVariant="midGray" size="s" userSelectNone>
+          {comment.by}
+        </Text>
+        <Text
+          darkVariant="midGray"
+          italic
+          lightVariant="gray"
+          ml="0.4em"
+          size="s"
+          userSelectNone
+        >
+          {relativeTime(comment.time)}
+        </Text>
+      </Box>
       {!collapsed && (
         <>
           <Text
@@ -59,11 +61,10 @@ const RecursiveComments = ({ comment }) => {
               hyphens: auto;
 
               & > * {
-                margin-top: 0.3em;
+                margin-top: 0.5em;
               }
             `}
-            lineHeight="1.4"
-            size="s"
+            size="m"
           >
             {parseComment(comment.text)}
           </Text>
