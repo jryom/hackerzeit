@@ -11,6 +11,10 @@ const isExternalUrl = (url) => {
 const Anchor = styled.a`
   cursor: pointer;
   text-decoration: none;
+
+  &:visited * {
+    color: ${({ theme }) => theme.colors.midGray};
+  }
 `;
 
 const StyledLink = ({ children, href, as }) => {
