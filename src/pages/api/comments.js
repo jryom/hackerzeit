@@ -29,7 +29,7 @@ const recursiveFetchKids = async (
     return Promise.all(
       getValues(kidSnapshots)
         .map((item) => {
-          if (item.deleted) return null;
+          if (!item || item.deleted) return null;
           return recursiveFetchKids(item.kids).then((kids) => {
             return { ...item, kids };
           });
