@@ -31,7 +31,7 @@ const LoadButton = React.forwardRef(({ onClick, visible }, ref) => {
       py={[3, 4]}
       visibility={visible ? 'initial' : 'hidden'}
     >
-      <Text size="s">Load more</Text>
+      <Text variant="s">Load more</Text>
     </ButtonContainer>
   );
 });

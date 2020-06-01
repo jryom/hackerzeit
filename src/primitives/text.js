@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import {
   color,
   layout,
@@ -8,50 +8,40 @@ import {
   variant,
 } from 'styled-system';
 
-const fontSizeVariants = () =>
+const fontVariants = () =>
   variant({
-    prop: 'size',
+    prop: 'variant',
     variants: {
       l: {
         fontSize: [3, 4],
-        lineHeight: [1, 2],
+        lineHeight: '1.25em',
+        fontWeight: [360, 340],
       },
       m: {
         fontSize: [1, 2],
-        lineHeight: [1, 2],
+        lineHeight: '1.25em',
       },
       s: {
         fontSize: [0, 1],
-        lineHeight: [1, 2],
+        lineHeight: '1.25em',
       },
     },
   });
 
-const hoverUnderlineCss = css`
+const hoverUnderlineCss = `
   &:hover {
     text-decoration: underline;
   }
 `;
 
-const pointerCss = css`
-  cursor: pointer;
-`;
-
-const userSelectNoneCss = css`
-  user-select: none;
-`;
-
-const noWrapCss = css`
-  white-space: nowrap;
-`;
-
 export default styled('span')`
-  ${fontSizeVariants}
+  ${fontVariants}
+
   color: ${({ theme, ...props }) =>
-    theme.colors[props.lightVariant] || theme.colors.black};
+    theme.colors[props.lightVariant] || theme.colors.darkGray};
   font-family: ${({ serif, theme }) =>
     serif ? theme.fontFamilies.serif : theme.fontFamilies.sans};
-  opacity: 0.9;
+  opacity: 0.85;
   transition-property: color .3s;
 
   @media (prefers-color-scheme: dark) {
@@ -62,9 +52,9 @@ export default styled('span')`
   ${({ bold }) => (bold ? 'font-weight: 600' : '')};
   ${({ italic }) => (italic ? 'font-style: italic' : null)};
   ${({ hoverUnderline }) => (hoverUnderline ? hoverUnderlineCss : '')}
-  ${({ userSelectNone }) => (userSelectNone ? userSelectNoneCss : '')}
-  ${({ pointer }) => (pointer ? pointerCss : '')}
-  ${({ noWrap }) => (noWrap ? noWrapCss : '')}
+  ${({ userSelectNone }) => (userSelectNone ? 'user-select: none;' : '')}
+  ${({ pointer }) => (pointer ? 'cursor: pointer;' : '')}
+  ${({ noWrap }) => (noWrap ? 'white-space: nowrap;' : '')}
   ${color}
   ${position}
   ${space}

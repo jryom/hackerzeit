@@ -26,27 +26,30 @@ const RecursiveComments = ({ comment }) => {
           darkVariant="midGray"
           display="inline-block"
           lightVariant="gray"
-          mono
           onClick={() => {
             setCollapsed(!collapsed);
           }}
           pointer
-          size="s"
           userSelectNone
-          width="1.8em"
+          variant="s"
+          width="1.6em"
         >
-          {collapsed ? '[+] ' : '[—] '}
+          {collapsed ? '[+]' : '[-]'}
         </Text>
-        <Text darkVariant="gray" lightVariant="midGray" size="s" userSelectNone>
+        <Text
+          darkVariant="gray"
+          lightVariant="midGray"
+          userSelectNone
+          variant="s"
+        >
           {comment.by}
         </Text>
         <Text
           darkVariant="midGray"
-          italic
           lightVariant="gray"
           ml="0.4em"
-          size="s"
           userSelectNone
+          variant="s"
         >
           {relativeTime(comment.time)}
         </Text>
