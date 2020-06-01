@@ -15,7 +15,7 @@ const BorderedCommentBox = styled(Box)`
 const RecursiveComments = ({ comment }) => {
   const [collapsed, setCollapsed] = useLocalStorage(comment?.id, false);
   const swipeHandlers = useSwipeable({
-    onSwiped: ({ absX, absY }) => absX > absY && setCollapsed(!collapsed),
+    onSwiped: ({ absX, absY }) => absX > absY * 1.5 && setCollapsed(!collapsed),
   });
 
   return (
@@ -67,7 +67,7 @@ const RecursiveComments = ({ comment }) => {
                 margin-top: 0.4em;
               }
             `}
-            size="m"
+            variant="m"
           >
             {parseComment(comment.text)}
           </Text>

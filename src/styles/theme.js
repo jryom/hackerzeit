@@ -14,7 +14,7 @@ export default {
     accent: '#fb9a5ac7',
   },
   breakpoints: ['50em', '60em'],
-  fontSizes: ['0.889rem', '1rem', '1.125rem', '1.2rem', '1.266rem'],
+  fontSizes: ['0.909rem', '1rem', '1.1rem', '1.21rem', '1.331rem'],
   maxWidth: '70rem',
   sizes: [
     '1rem',
