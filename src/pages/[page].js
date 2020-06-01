@@ -19,11 +19,14 @@ const Li = styled(Box).attrs({ as: 'li' })`
 
   @media screen and (min-width: ${({ theme }) => theme.breakpoints[0]}) {
     &::before {
-      content: counter(story) '.';
+      content: '.' counter(story);
+      direction: rtl;
       display: inline-block;
       line-height: 1.5;
+      margin-right: 0.75em;
+      text-align: right;
       vertical-align: top;
-      width: 1.8em;
+      width: 1em;
     }
   }
 `;
