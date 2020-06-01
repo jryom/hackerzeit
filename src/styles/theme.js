@@ -35,6 +35,7 @@ export default {
     '0.75rem',
     '1rem',
     '2rem',
+    '3rem',
     '4rem',
     '8rem',
     '16rem',

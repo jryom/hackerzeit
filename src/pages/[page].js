@@ -48,7 +48,7 @@ const Index = () => {
 
       return data.stories.map((story) => {
         return (
-          <Li key={story.id} mb={[3, 4]} pb={[2, 3]}>
+          <Li key={story.id} mb={[3, 4]} pb={[2, 4]}>
             <Box
               css={`
                 display: inline-block;
