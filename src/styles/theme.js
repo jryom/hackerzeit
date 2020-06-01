@@ -29,5 +29,15 @@ export default {
     '70rem',
     '96rem',
   ],
-  spacing: ['0', '.25rem', '.5rem', '1rem', '2rem', '4rem', '8rem', '16rem'],
+  space: [
+    '0',
+    '0.25rem',
+    '0.5rem',
+    '0.75rem',
+    '1rem',
+    '2rem',
+    '4rem',
+    '8rem',
+    '16rem',
+  ],
 };
