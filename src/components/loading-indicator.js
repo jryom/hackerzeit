@@ -34,7 +34,7 @@ export default styled.div`
   width: 8px;
 
   ${css({
-    marginTop: [5, 6],
+    marginTop: [4, 5],
   })}
 
   &:after,

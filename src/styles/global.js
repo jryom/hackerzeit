@@ -38,7 +38,7 @@ body {
   min-height: 100vh;
   scroll-behavior: smooth;
   text-rendering: optimizeLegibility;
-  line-height: 1.5;
+  line-height: 1;
   background-color: ${({ theme }) => theme.colors.nearWhite};
 
   @media (prefers-color-scheme: dark) {

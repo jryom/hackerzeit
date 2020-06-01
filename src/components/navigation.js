@@ -11,7 +11,7 @@ const Li = styled.li`
   position: relative;
 
   ${css({
-    marginRight: 3,
+    marginRight: [4, 5],
   })}
 
   &:after {
@@ -32,7 +32,7 @@ const Li = styled.li`
 const Ol = styled.ol`
   list-style: none;
   ${css({
-    margin: [0, 1],
+    margin: [2, 3],
   })}
 `;
 
@@ -40,7 +40,7 @@ export default () => {
   const { asPath } = useRouter();
 
   return (
-    <Box bg="accent" maxWidth={8} mx="auto" px={3} py={3}>
+    <Box bg="accent" maxWidth={8} mx="auto" px={[3, 4]} py={[3, 4]}>
       <Ol>
         {Object.keys(PAGES).map((key) => (
           <Li key={PAGES[key]} active={asPath.includes(key.toLowerCase())}>

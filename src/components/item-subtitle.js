@@ -2,7 +2,7 @@ import { Box, Link, Text } from '@/primitives';
 import { relativeTime } from '@/utils';
 
 const ItemSubtitle = ({ data }) => (
-  <Box lineHeight={1} marginY={[1, 1]} opacity="0.6">
+  <Box marginY={[1, 2]} opacity="0.6">
     <Text size="s">{`${data.score} points by `}</Text>
     <Text hoverUnderline pointer size="s">
       {`${data.by}`}

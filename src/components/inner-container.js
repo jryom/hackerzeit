@@ -15,6 +15,6 @@ export default styled('main')`
   ${css({
     maxWidth: 8,
     paddingX: [3, 6],
-    paddingY: [3, 4],
+    paddingY: [3, 5],
   })}
 `;

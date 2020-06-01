@@ -10,7 +10,7 @@ const ItemTitle = ({ data }) => (
           darkVariant="gray"
           hoverUnderline
           lightVariant="gray"
-          ml="1"
+          serif
           size="s"
         >
           {`(${captureDomain(data.url)})`}

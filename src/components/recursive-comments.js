@@ -19,8 +19,8 @@ const RecursiveComments = ({ comment }) => {
   });
 
   return (
-    <Box mt={3}>
-      <Box mb={1}>
+    <Box mt={[3, 4]}>
+      <Box mb={[1, 2]}>
         <Text
           bold
           darkVariant="midGray"
@@ -61,7 +61,7 @@ const RecursiveComments = ({ comment }) => {
               hyphens: auto;
 
               & > * {
-                margin-top: 0.5em;
+                margin-top: 0.4em;
               }
             `}
             size="m"
@@ -71,7 +71,7 @@ const RecursiveComments = ({ comment }) => {
           <BorderedCommentBox
             borderLeft={1}
             borderLeftStyle="solid"
-            pl={[2, 3]}
+            pl={[2, 3, 4]}
           >
             {comment.kids.length
               ? comment.kids.map((childComment) => {

@@ -21,7 +21,7 @@ const Li = styled(Box).attrs({ as: 'li' })`
     &::before {
       content: counter(story) '.';
       display: inline-block;
-      line-height: 1.78;
+      line-height: 1.5;
       vertical-align: top;
       width: 1.8em;
     }
@@ -48,13 +48,12 @@ const Index = () => {
 
       return data.stories.map((story) => {
         return (
-          <Li key={story.id} mb={[3, 4]} pt={[1, 2]}>
+          <Li key={story.id} mb={[3, 4]} pb={[2, 3]}>
             <Box
               css={`
                 display: inline-block;
                 white-space: initial;
               `}
-              lineHeight={[1, 2]}
             >
               <ItemTitle data={story} />
               <ItemSubtitle data={story} />
