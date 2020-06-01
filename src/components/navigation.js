@@ -16,13 +16,13 @@ const Li = styled.li`
 
   &:after {
     background: ${({ theme }) => theme.colors.darkGray};
-    bottom: -1px;
+    bottom: -2px;
     content: '';
     display: ${({ active }) => (active ? 'block' : 'none')};
     height: 2px;
-    left: -5%;
+    left: 0%;
     position: absolute;
-    width: 110%;
+    width: 100%;
 
     @media (prefers-color-scheme: dark) {
       background: ${({ theme }) => theme.colors.nearWhite};
