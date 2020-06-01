@@ -1,6 +1,12 @@
 import { createGlobalStyle } from 'styled-components';
 
 export default createGlobalStyle`
+@font-face {
+  font-family: 'SourceSansProRegular';
+  src: url('/fonts/source-sans-pro-regular.woff2') format('woff2'),
+  url('/fonts/source-sans-pro-regular.ttf') format('ttf');
+}
+
 *,
 *::before,
 *::after {

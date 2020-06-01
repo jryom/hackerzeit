@@ -1,7 +1,7 @@
 export default {
   fontFamilies: {
-    sans: '"avenir next", avenir, sans-serif',
-    serif: '"Garamond", serif',
+    sans: '"SourceSansProRegular",system,sans-serif',
+    serif: 'Georgia,Times,Times New Roman,serif',
   },
   colors: {
     white: '#fbfbfb',
