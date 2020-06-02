@@ -40,7 +40,7 @@ export default () => {
   const { asPath } = useRouter();
 
   return (
-    <Box bg="accent" maxWidth={8} mx="auto" px={[3, 4]} py={[3, 4]}>
+    <Box bg="accent" maxWidth={8} mx="auto" px={[2, 4]} py={[3, 4]}>
       <Ol>
         {Object.keys(PAGES).map((key) => (
           <Li key={PAGES[key]} active={asPath.includes(key.toLowerCase())}>

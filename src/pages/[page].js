@@ -21,7 +21,7 @@ const Li = styled(Box).attrs({ as: 'li' })`
       content: '.' counter(story);
       direction: rtl;
       display: inline-block;
-      line-height: 1.5;
+      line-height: 1.45;
       margin-right: 0.75em;
       text-align: right;
       vertical-align: top;
@@ -46,7 +46,7 @@ const Index = ({ page }) => {
 
       return data.stories.map((story) => {
         return (
-          <Li key={story.id} mb={[3, 4]} pb={[2, 4]}>
+          <Li key={story.id} mb={[4, 5]}>
             <Box
               css={`
                 display: inline-block;
