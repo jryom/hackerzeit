@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import { useRouter } from 'next/router';
 import { ThemeProvider } from 'styled-components';
 import { SWRConfig } from 'swr';
 
@@ -6,6 +7,10 @@ import { InnerContainer, Navigation, OuterContainer } from '@/components';
 import theme, { GlobalStyle } from '@/styles';
 
 function App({ Component, pageProps }) {
+  const {
+    query: { page },
+  } = useRouter();
+
   return (
     <SWRConfig
       value={{
@@ -19,7 +24,7 @@ function App({ Component, pageProps }) {
         <OuterContainer>
           <Navigation />
           <InnerContainer>
-            <Component {...pageProps} />
+            <Component key={page} page={page} {...pageProps} />
           </InnerContainer>
         </OuterContainer>
       </ThemeProvider>

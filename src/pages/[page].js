@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import { useRouter } from 'next/router';
 import styled from 'styled-components';
 import useSWR, { useSWRPages } from 'swr';
 
@@ -31,11 +30,7 @@ const Li = styled(Box).attrs({ as: 'li' })`
   }
 `;
 
-const Index = () => {
-  const {
-    query: { page },
-  } = useRouter();
-
+const Index = ({ page }) => {
   const { pages, isLoadingMore, isReachingEnd, loadMore } = useSWRPages(
     page,
 
@@ -90,6 +85,14 @@ const Index = () => {
       />
     </>
   );
+};
+
+Index.defaultProps = {
+  page: null,
+};
+
+Index.propTypes = {
+  page: PropTypes.string,
 };
 
 export default Index;
