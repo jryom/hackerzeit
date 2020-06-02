@@ -35,6 +35,24 @@ export default class MyDocument extends Document {
         <Head>
           <title>Hacker Zeit</title>
           <meta content="Hacker News, but slower!" name="description" />
+          <link
+            href="/apple-touch-icon.png"
+            rel="apple-touch-icon"
+            sizes="180x180"
+          />
+          <link
+            href="/favicon-32x32.png"
+            rel="icon"
+            sizes="32x32"
+            type="image/png"
+          />
+          <link
+            href="/favicon-16x16.png"
+            rel="icon"
+            sizes="16x16"
+            type="image/png"
+          />
+          <link href="/site.webmanifest" rel="manifest" />
         </Head>
         <body>
           <Main />
