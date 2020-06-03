@@ -19,10 +19,9 @@ const RecursiveComments = ({ comment }) => {
     <Box mt={[3, 4]}>
       <Box mb={[1, 2]}>
         <Text
+          _color="dimmedForeground"
           bold
-          darkVariant="midGray"
           display="inline-block"
-          lightVariant="gray"
           onClick={() => {
             setCollapsed(!collapsed);
           }}
@@ -33,21 +32,10 @@ const RecursiveComments = ({ comment }) => {
         >
           {collapsed ? '[+]' : '[-]'}
         </Text>
-        <Text
-          darkVariant="gray"
-          lightVariant="midGray"
-          userSelectNone
-          variant="s"
-        >
+        <Text _color="dimmedForeground" userSelectNone variant="s">
           {comment.by}
         </Text>
-        <Text
-          darkVariant="midGray"
-          lightVariant="gray"
-          ml="0.4em"
-          userSelectNone
-          variant="s"
-        >
+        <Text _color="dimmedForeground" ml="0.4em" userSelectNone variant="s">
           {relativeTime(comment.time)}
         </Text>
       </Box>
@@ -61,7 +49,7 @@ const RecursiveComments = ({ comment }) => {
               hyphens: auto;
 
               & > * {
-                margin-top: 0.4em;
+                margin-top: 0.6em;
               }
             `}
             variant="m"

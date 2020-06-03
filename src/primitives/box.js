@@ -17,4 +17,5 @@ export default styled.div`
   ${position}
   ${space}
   ${typography}
+  ${({ pointer }) => (pointer ? 'cursor: pointer;' : '')}
 `;

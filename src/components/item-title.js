@@ -8,8 +8,8 @@ const ItemTitle = ({ data }) => (
       {data.url && (
         <Text
           _color="dimmedForeground"
+          family="serif"
           hoverUnderline
-          serif
           variant="s"
         >
           {` (${captureDomain(data.url)})`}
