@@ -5,6 +5,7 @@ export default createGlobalStyle`
   font-family: 'SourceSansProRegular';
   src: url('/fonts/source-sans-pro-regular.woff2') format('woff2'),
   url('/fonts/source-sans-pro-regular.ttf') format('ttf');
+  font-display: swap;
 }
 
 
