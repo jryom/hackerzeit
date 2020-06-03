@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 export default styled.ol`
   font-family: ${({ theme }) => theme.fontFamilies.serif};
-  color: ${({ theme }) => theme.colors.gray};
+  color: var(--dimmedForeground);
   margin: 0;
   list-style: none;
 

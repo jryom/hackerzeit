@@ -2,15 +2,12 @@ import css from '@styled-system/css';
 import styled from 'styled-components';
 
 export default styled('main')`
-  background-color: ${({ theme }) => theme.colors.white};
+  background-color: var(--brightBackground);
   display: flex;
   flex-direction: column;
   margin: 0 auto;
   min-height: 100vh;
-
-  @media (prefers-color-scheme: dark) {
-    background-color: ${({ theme }) => theme.colors.darkGray};
-  }
+  transition: background-color 0.2s;
 
   ${css({
     maxWidth: 8,

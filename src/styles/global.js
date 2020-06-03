@@ -7,6 +7,20 @@ export default createGlobalStyle`
   url('/fonts/source-sans-pro-regular.ttf') format('ttf');
 }
 
+
+  :root {
+    ${({ theme, isDarkMode }) =>
+      Object.keys(theme.colors[isDarkMode ? 'dark' : 'light']).map(
+        (colorKey) =>
+          `--${colorKey}:${
+            theme.colors[isDarkMode ? 'dark' : 'light'][colorKey]
+          };`
+      )}
+
+    --fontFamily: ${({ theme, serif }) =>
+      serif ? theme.fonts.vollkorn : theme.fonts.sans};
+  }
+
 *,
 *::before,
 *::after {
@@ -35,28 +49,20 @@ dd {
 }
 
 body {
+  background-color: var(--background);
+  line-height: 1;
   min-height: 100vh;
   scroll-behavior: smooth;
   text-rendering: optimizeLegibility;
-  line-height: 1;
-  background-color: ${({ theme }) => theme.colors.nearWhite};
-
-  @media (prefers-color-scheme: dark) {
-    background-color: ${({ theme }) => theme.colors.black};
-  }
 }
 
   .quote {
-  color: ${({ theme }) => theme.colors.midGray};
+  color: var(--dimmedForeground);
   font-style: italic;
-
-  @media (prefers-color-scheme: dark) {
-    color: ${({ theme }) => theme.colors.gray};
-  }
 }
 
 a:not([class]) {
-  color: ${({ theme }) => theme.colors.accent};
+  color: var(--accent);
   font-weight: 500;
 }
 
@@ -65,9 +71,12 @@ pre {
   word-break: keep-all;
 }
 
-input,
-button,
-textarea,
-select {
+button {
+  background: unset;
+  border: none;
   font: inherit;
+}
+
+svg {
+  transition: fill 0.2s;
 }`;

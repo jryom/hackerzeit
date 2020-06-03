@@ -13,7 +13,7 @@ const Anchor = styled.a`
   text-decoration: none;
 
   &:visited * {
-    color: ${({ theme }) => theme.colors.midGray};
+    color: var(--dimmedForeground);
   }
 `;
 

@@ -6,10 +6,7 @@ import { Box, Text } from '@/primitives';
 import { parseComment, relativeTime } from '@/utils';
 
 const BorderedCommentBox = styled(Box)`
-  border-left-color: ${({ theme }) => theme.colors.lightGray};
-  @media (prefers-color-scheme: dark) {
-    border-left-color: ${({ theme }) => theme.colors.midGray}77;
-  }
+  border-left-color: var(--extraDimmedForeground);
 `;
 
 const RecursiveComments = ({ comment }) => {

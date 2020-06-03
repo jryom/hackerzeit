@@ -1,19 +1,9 @@
-import css from '@styled-system/css';
 import styled from 'styled-components';
 
 import { Box, Text } from '@/primitives';
 
 const ButtonContainer = styled(Box)`
-  ${css({
-    backgroundColor: 'lightGray',
-  })}
-
-  @media (prefers-color-scheme: dark) {
-    ${css({
-      backgroundColor: 'midGray',
-    })}
-  }
-
+  background-color: var(--background);
   ${({ visibility }) => `visibility: ${visibility}`}
 `;
 

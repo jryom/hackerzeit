@@ -22,7 +22,7 @@ const Dot = styled.div`
   animation-duration: 0.4s;
   animation-iteration-count: infinite;
   animation-name: ${wave};
-  background-color: ${({ theme }) => theme.colors.gray};
+  background-color: var(--dimmedForeground);
   display: inline-block;
   height: 8px;
   margin: 0 4px;
@@ -39,10 +39,6 @@ const Dot = styled.div`
 
   &:nth-of-type(3) {
     animation-delay: 0.2s;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    background-color: ${({ theme }) => theme.colors.midGray};
   }
 `;
 

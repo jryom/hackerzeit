@@ -7,26 +7,22 @@ import { Box, Link, Text } from '@/primitives';
 
 const Li = styled.li`
   display: inline;
-  opacity: 0.8;
   position: relative;
 
   ${css({
-    marginRight: [4, 5],
+    marginRight: [3, 5],
   })}
 
   &:after {
-    background: ${({ theme }) => theme.colors.darkGray};
+    background-color: var(--foreground);
     bottom: -2px;
     content: '';
     display: ${({ active }) => (active ? 'block' : 'none')};
     height: 2px;
     left: 0%;
     position: absolute;
+    transition: background-color 0.2s;
     width: 100%;
-
-    @media (prefers-color-scheme: dark) {
-      background: ${({ theme }) => theme.colors.nearWhite};
-    }
   }
 `;
 const Ol = styled.ol`

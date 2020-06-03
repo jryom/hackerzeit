@@ -7,9 +7,8 @@ const ItemTitle = ({ data }) => (
       <Text opacity="0.8" variant="l">{`${data.title}`}</Text>
       {data.url && (
         <Text
-          darkVariant="gray"
+          _color="dimmedForeground"
           hoverUnderline
-          lightVariant="gray"
           serif
           variant="s"
         >
