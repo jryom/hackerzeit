@@ -4,12 +4,16 @@ import { ThemeProvider } from 'styled-components';
 import { SWRConfig } from 'swr';
 
 import { InnerContainer, Navigation, OuterContainer } from '@/components';
+import { useDarkMode, useLocalStorage } from '@/hooks';
 import theme, { GlobalStyle } from '@/styles';
 
 function App({ Component, pageProps }) {
   const {
     query: { page },
   } = useRouter();
+
+  const [isDarkMode, setDarkMode] = useDarkMode();
+  const [isSerif, setSerif] = useLocalStorage('isSerif');
 
   return (
     <SWRConfig
@@ -20,9 +24,14 @@ function App({ Component, pageProps }) {
       }}
     >
       <ThemeProvider theme={theme}>
-        <GlobalStyle />
+        <GlobalStyle isDarkMode={isDarkMode} serif={isSerif} />
         <OuterContainer>
-          <Navigation />
+          <Navigation
+            isDarkMode={isDarkMode}
+            isSerif={isSerif}
+            setDarkMode={setDarkMode}
+            setSerif={setSerif}
+          />
           <InnerContainer>
             <Component key={page} page={page} {...pageProps} />
           </InnerContainer>
