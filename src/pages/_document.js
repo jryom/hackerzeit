@@ -33,7 +33,6 @@ export default class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
-          <title>Hacker Zeit</title>
           <meta content="Hacker News, but slower!" name="description" />
           <link
             href="/apple-touch-icon.png"
