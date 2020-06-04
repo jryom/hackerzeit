@@ -4,7 +4,7 @@ import { captureDomain } from '@/utils';
 const ItemTitle = ({ data }) => (
   <div>
     <Link href={data.url || `/item?id=${data.id}`}>
-      <Text opacity="0.8" variant="l">{`${data.title}`}</Text>
+      <Text variant="l">{`${data.title}`}</Text>
       {data.url && (
         <Text _color="dimmedForeground" hoverUnderline serif variant="s">
           {` (${captureDomain(data.url)})`}
