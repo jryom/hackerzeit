@@ -12,7 +12,7 @@ const Li = styled.li`
   position: relative;
 
   ${css({
-    marginRight: [3, 5],
+    marginRight: ['calc(7vw - 0.7rem)', 5],
   })}
 
   &:after {
@@ -47,14 +47,15 @@ const Navigation = ({ setDarkMode, setSerif, isDarkMode, isSerif }) => {
       justifyContent="space-between"
       maxWidth={8}
       mx="auto"
-      px={[2, 4]}
+      paddingLeft={[2, 4]}
+      paddingRight={[2, 4]}
       py={[3, 4]}
     >
       <Ol>
         {Object.keys(PAGES).map((key) => (
           <Li key={PAGES[key]} active={asPath.includes(key.toLowerCase())}>
             <Link as={`/${key.toLowerCase()}`} href="/[page]">
-              <Text sans userSelectNone variant="m">
+              <Text fontSize={[0, 2]} userSelectNone>
                 {PAGES[key]}
               </Text>
             </Link>
@@ -93,7 +94,13 @@ const Navigation = ({ setDarkMode, setSerif, isDarkMode, isSerif }) => {
           type="button"
         >
           {didMount && (
-            <Text bold serif={isSerif} userSelectNone variant="s">
+            <Text
+              bold
+              fontSize={[0, 2]}
+              sans={isSerif}
+              serif={!isSerif}
+              userSelectNone
+            >
               A
             </Text>
           )}

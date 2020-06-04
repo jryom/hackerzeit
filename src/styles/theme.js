@@ -1,8 +1,10 @@
 export default {
   fonts: {
     sans:
-      '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif',
-    serif: 'Georgia, Times, Times New Roman, serif',
+      '-apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, Ubuntu, roboto, noto, segoe ui, arial, sans-serif',
+    serif:
+      'Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol',
+    mono: 'Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace',
   },
   colors: {
     light: {
@@ -23,7 +25,7 @@ export default {
     },
   },
   breakpoints: ['50em', '60em'],
-  fontSizes: ['0.909rem', '1rem', '1.1rem', '1.21rem', '1.331rem'],
+  fontSizes: ['0.909rem', '1rem', '1.1rem', '1.21rem'],
   maxWidth: '70rem',
   sizes: [
     '1rem',
