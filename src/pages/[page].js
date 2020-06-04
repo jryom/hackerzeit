@@ -13,10 +13,9 @@ import { Box, Ol } from '@/primitives';
 
 const Li = styled(Box).attrs({ as: 'li' })`
   counter-increment: story;
-  white-space: nowrap;
-  width: calc(100% - 1.8em);
 
   @media screen and (min-width: ${({ theme }) => theme.breakpoints[0]}) {
+    white-space: nowrap;
     &::before {
       content: '.' counter(story);
       direction: rtl;
