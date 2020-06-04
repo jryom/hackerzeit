@@ -34,6 +34,11 @@ export default class MyDocument extends Document {
       <Html lang="en">
         <Head>
           <meta content="Hacker News, but slower!" name="description" />
+          <meta
+            content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover, user-scalable=no, shrink-to-fit=no"
+            name="viewport"
+          />
+          <meta content="true" name="HandheldFriendly" />
           <link
             href="/apple-touch-icon.png"
             rel="apple-touch-icon"
