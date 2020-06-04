@@ -1,5 +1,5 @@
 export default {
-  fontFamilies: {
+  fonts: {
     sans: '"SourceSansProRegular",system,sans-serif',
     serif: 'Georgia,Times,Times New Roman,serif',
   },

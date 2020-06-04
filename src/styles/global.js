@@ -19,35 +19,35 @@ export default createGlobalStyle`
       )}
 
     --fontFamily: ${({ theme, serif }) =>
-      serif ? theme.fonts.vollkorn : theme.fonts.sans};
+      serif ? theme.fonts.serif : theme.fonts.sans};
   }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
 
 ul[class],
-ol[class] {
-  padding: 0;
-}
+  ol[class] {
+    padding: 0;
+  }
 
 body,
-h1,
-h2,
-h3,
-h4,
-p,
-ul[class],
-li,
-figure,
-figcaption,
-blockquote,
-dl,
-dd {
-  margin: 0;
-}
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  ul[class],
+  li,
+  figure,
+  figcaption,
+  blockquote,
+  dl,
+  dd {
+    margin: 0;
+  }
 
 body {
   background-color: var(--background);
@@ -58,9 +58,9 @@ body {
 }
 
   .quote {
-  color: var(--dimmedForeground);
-  font-style: italic;
-}
+    color: var(--dimmedForeground);
+    font-style: italic;
+  }
 
 a:not([class]) {
   color: var(--accent);

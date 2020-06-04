@@ -54,7 +54,9 @@ const Navigation = ({ setDarkMode, setSerif, isDarkMode, isSerif }) => {
         {Object.keys(PAGES).map((key) => (
           <Li key={PAGES[key]} active={asPath.includes(key.toLowerCase())}>
             <Link as={`/${key.toLowerCase()}`} href="/[page]">
-              <Text variant="m">{PAGES[key]}</Text>
+              <Text family="sans" userSelectNone variant="m">
+                {PAGES[key]}
+              </Text>
             </Link>
           </Li>
         ))}
@@ -70,9 +72,9 @@ const Navigation = ({ setDarkMode, setSerif, isDarkMode, isSerif }) => {
           `}
           display="flex"
           justifyContent="center"
-          marginRight={1}
+          marginRight={[2, 4]}
           onClick={() => setDarkMode(!isDarkMode)}
-          padding={[0, 1]}
+          padding={['0.15em', 1]}
           pointer
           size={['1.5rem', '2rem']}
           type="button"
@@ -91,7 +93,12 @@ const Navigation = ({ setDarkMode, setSerif, isDarkMode, isSerif }) => {
           type="button"
         >
           {didMount && (
-            <Text bold family={isSerif ? 'sans' : 'serif'} variant="s">
+            <Text
+              bold
+              family={isSerif ? 'sans' : 'serif'}
+              userSelectNone
+              variant="s"
+            >
               A
             </Text>
           )}

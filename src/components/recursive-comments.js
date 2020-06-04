@@ -22,15 +22,16 @@ const RecursiveComments = ({ comment }) => {
           _color="dimmedForeground"
           bold
           display="inline-block"
+          fontFamily="monospace"
           onClick={() => {
             setCollapsed(!collapsed);
           }}
           pointer
+          pr="0.5em"
           userSelectNone
           variant="s"
-          width="1.6em"
         >
-          {collapsed ? '[+]' : '[-]'}
+          {collapsed ? '+' : '-'}
         </Text>
         <Text _color="dimmedForeground" userSelectNone variant="s">
           {comment.by}

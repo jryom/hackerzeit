@@ -30,5 +30,5 @@ export default () => {
 
     return [enabled, conditionallySetStoredState];
   }
-  return [false, () => {}];
+  return [undefined, () => {}];
 };

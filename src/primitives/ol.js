@@ -2,7 +2,7 @@ import css from '@styled-system/css';
 import styled from 'styled-components';
 
 export default styled.ol`
-  font-family: ${({ theme }) => theme.fonts.systemSerif};
+  font-family: ${({ theme }) => theme.fonts.serif};
   color: var(--dimmedForeground);
   margin: 0;
   list-style: none;
