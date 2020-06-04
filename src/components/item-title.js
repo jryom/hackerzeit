@@ -6,12 +6,7 @@ const ItemTitle = ({ data }) => (
     <Link href={data.url || `/item?id=${data.id}`}>
       <Text opacity="0.8" variant="l">{`${data.title}`}</Text>
       {data.url && (
-        <Text
-          _color="dimmedForeground"
-          family="serif"
-          hoverUnderline
-          variant="s"
-        >
+        <Text _color="dimmedForeground" hoverUnderline serif variant="s">
           {` (${captureDomain(data.url)})`}
         </Text>
       )}

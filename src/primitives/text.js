@@ -19,27 +19,17 @@ const Text = styled('span')`
   line-height: 1.4em;
   opacity: 0.85;
   transition: color 0.2s;
+  font-family: ${({ theme, sans, serif }) => {
+    if (serif) return theme.fonts.serif;
+    if (sans) return theme.fonts.sans;
+    return 'var(--fontFamily)';
+  }};
 
-  ${variant({
-    prop: 'family',
-    variants: {
-      serif: {
-        fontFamily: 'serif',
-      },
-      sans: {
-        fontFamily: 'sans',
-      },
-      theme: {
-        fontFamily: 'var(--fontFamily)',
-      },
-    },
-  })}
   ${variant({
     prop: 'variant',
     variants: {
       l: {
         fontSize: [3, 4],
-        fontWeight: [360, 340],
       },
       m: {
         fontSize: [1, 2],
@@ -64,7 +54,6 @@ const Text = styled('span')`
 
 Text.defaultProps = {
   variant: 'm',
-  family: 'theme',
 };
 
 export default Text;

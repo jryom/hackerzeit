@@ -54,7 +54,7 @@ const Navigation = ({ setDarkMode, setSerif, isDarkMode, isSerif }) => {
         {Object.keys(PAGES).map((key) => (
           <Li key={PAGES[key]} active={asPath.includes(key.toLowerCase())}>
             <Link as={`/${key.toLowerCase()}`} href="/[page]">
-              <Text family="sans" userSelectNone variant="m">
+              <Text sans userSelectNone variant="m">
                 {PAGES[key]}
               </Text>
             </Link>
@@ -93,12 +93,7 @@ const Navigation = ({ setDarkMode, setSerif, isDarkMode, isSerif }) => {
           type="button"
         >
           {didMount && (
-            <Text
-              bold
-              family={isSerif ? 'sans' : 'serif'}
-              userSelectNone
-              variant="s"
-            >
+            <Text bold serif={isSerif} userSelectNone variant="s">
               A
             </Text>
           )}
