@@ -95,9 +95,6 @@ const Index = ({ page }) => {
       </Head>
 
       <Ol>{pages}</Ol>
-
-      {isLoadingMore && <LoadingIndicator />}
-
       <InfiniteScroll
         isLoadingMore={isLoadingMore}
         isReachingEnd={isReachingEnd}

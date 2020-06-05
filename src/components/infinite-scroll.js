@@ -1,7 +1,8 @@
 import Router from 'next/router';
 import { useEffect, useRef, useState } from 'react';
 
-import { LoadButton } from '@/components';
+import { LoadButton, LoadingIndicator } from '@/components';
+import { Box } from '@/primitives';
 import { getIntersectionObserver } from '@/utils';
 
 const InfiniteScroll = ({ isLoadingMore, isReachingEnd, loadMore }) => {
@@ -22,16 +23,29 @@ const InfiniteScroll = ({ isLoadingMore, isReachingEnd, loadMore }) => {
     };
   }, [isActive, loadMore, isReachingEnd, isLoadingMore]);
 
+  if (isReachingEnd) return null;
+
   return (
-    <LoadButton
-      ref={lastChildRef}
-      loadMore={loadMore}
-      onClick={() => {
-        setActive(true);
-        loadMore();
-      }}
-      visible={isActive ? false : !isLoadingMore}
-    />
+    <Box
+      alignItems="center"
+      display="flex"
+      height={[2, 3]}
+      justifyContent="center"
+    >
+      {isLoadingMore ? (
+        <LoadingIndicator />
+      ) : (
+        <LoadButton
+          ref={lastChildRef}
+          loadMore={loadMore}
+          onClick={() => {
+            setActive(true);
+            loadMore();
+          }}
+          visible={!isActive}
+        />
+      )}
+    </Box>
   );
 };
 

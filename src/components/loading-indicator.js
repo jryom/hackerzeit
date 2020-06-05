@@ -30,7 +30,7 @@ const Dot = styled.div`
   width: 8px;
 
   ${css({
-    marginTop: [4, 5],
+    marginY: [2, 4],
   })}
 
   &:nth-of-type(2) {
@@ -43,7 +43,7 @@ const Dot = styled.div`
 `;
 
 export default () => (
-  <Box marginTop={[5, 6]} marginX="auto" px={[4, 5]}>
+  <Box>
     <Dot />
     <Dot />
     <Dot />

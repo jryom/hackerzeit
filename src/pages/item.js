@@ -6,7 +6,6 @@ import {
   InfiniteScroll,
   ItemSubtitle,
   ItemTitle,
-  LoadingIndicator,
   RecursiveComments,
 } from '@/components';
 import { Box } from '@/primitives';
@@ -45,13 +44,11 @@ const Item = () => {
         <title>{`Hacker Zeit${data?.title ? `: ${data.title}` : ''}`}</title>
       </Head>
 
-      <Box mb={[1, 2]}>
+      <Box mb={[0, 4]}>
         <ItemTitle as="h1" data={data} />
         <ItemSubtitle data={data} />
       </Box>
       {pages}
-
-      {isLoadingMore && <LoadingIndicator />}
 
       <InfiniteScroll
         isLoadingMore={isLoadingMore}

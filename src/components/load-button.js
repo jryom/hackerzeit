@@ -13,9 +13,6 @@ const LoadButton = React.forwardRef(({ onClick, visible }, ref) => {
       ref={ref}
       as="button"
       border="none"
-      display="block"
-      marginTop={[5, 6]}
-      mx="auto"
       onClick={onClick}
       px={[4, 5]}
       py={[3, 4]}
