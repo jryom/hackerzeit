@@ -42,6 +42,7 @@ const Navigation = ({ setDarkMode, setSerif, isDarkMode, isSerif }) => {
   return (
     <Box
       alignItems="center"
+      as="nav"
       bg="var(--accent)"
       display="flex"
       justifyContent="space-between"
@@ -65,6 +66,7 @@ const Navigation = ({ setDarkMode, setSerif, isDarkMode, isSerif }) => {
       <Box alignItems="center" display="flex">
         <Box
           alignItems="center"
+          aria-label="Color scheme swich"
           as="button"
           css={`
             svg {
@@ -84,6 +86,7 @@ const Navigation = ({ setDarkMode, setSerif, isDarkMode, isSerif }) => {
         </Box>
         <Box
           alignItems="center"
+          aria-label="Font switch"
           as="button"
           display="flex"
           justifyContent="center"

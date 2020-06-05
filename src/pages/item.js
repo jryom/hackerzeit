@@ -46,7 +46,7 @@ const Item = () => {
       </Head>
 
       <Box mb={[1, 2]}>
-        <ItemTitle data={data} />
+        <ItemTitle as="h1" data={data} />
         <ItemSubtitle data={data} />
       </Box>
       {pages}
