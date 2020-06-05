@@ -50,7 +50,7 @@ const RecursiveComments = ({ comment }) => {
               hyphens: auto;
 
               & > * {
-                margin-top: 0.25em;
+                margin-top: 0.5em;
               }
             `}
             variant="m"
