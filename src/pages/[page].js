@@ -20,7 +20,7 @@ const Li = styled(Box).attrs({ as: 'li' })`
       content: '.' counter(story);
       direction: rtl;
       display: inline-block;
-      line-height: 1.45;
+      line-height: 1.2;
       margin-right: 0.75em;
       text-align: right;
       vertical-align: top;

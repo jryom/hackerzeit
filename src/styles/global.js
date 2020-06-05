@@ -42,6 +42,7 @@ body,
   }
 
 body {
+  -webkit-text-size-adjust: 100%;
   background-color: var(--background);
   line-height: 1;
   min-height: 100vh;
