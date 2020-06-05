@@ -50,10 +50,18 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-  .quote {
-    color: var(--dimmedForeground);
-    font-style: italic;
-  }
+.quote {
+  color: var(--dimmedForeground);
+  font-style: italic;
+}
+
+pre {
+  background-color: var(--background);
+  font-family: ${({ theme }) => theme.fonts.mono};
+  font-size: 90%;
+  margin: 0.5em 0;
+  padding: 0.5em 0;
+}
 
 a:not([class]) {
   color: var(--accent);
