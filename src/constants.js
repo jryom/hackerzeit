@@ -1,9 +1,9 @@
 export const PAGE_LENGTH = 30;
 export const PAGES = {
-  NEW: 'New',
-  TOP: 'Top',
   BEST: 'Best',
-  JOB: 'Jobs',
+  TOP: 'Top',
   SHOW: 'Show',
   ASK: 'Ask',
+  NEW: 'New',
+  JOB: 'Jobs',
 };
