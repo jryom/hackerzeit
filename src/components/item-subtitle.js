@@ -2,7 +2,7 @@ import { Box, Link, Text } from '@/primitives';
 import { relativeTime } from '@/utils';
 
 const ItemSubtitle = ({ data }) => (
-  <Box marginY={[1, 2]}>
+  <Box marginTop={[1, 2]}>
     <Text _color="dimmedForeground" variant="s">
       {`${data.score} points by `}
     </Text>
