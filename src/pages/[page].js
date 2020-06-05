@@ -9,7 +9,7 @@ import {
   LoadingIndicator,
 } from '@/components';
 import { PAGES } from '@/constants';
-import { Box, Ol } from '@/primitives';
+import { Box } from '@/primitives';
 
 const Li = styled(Box).attrs({ as: 'li' })`
   counter-increment: story;
@@ -20,13 +20,21 @@ const Li = styled(Box).attrs({ as: 'li' })`
       content: '.' counter(story);
       direction: rtl;
       display: inline-block;
-      line-height: 1.2;
+      line-height: 1.4;
       margin-right: 0.75em;
       text-align: right;
       vertical-align: top;
       width: 1em;
     }
   }
+`;
+
+const Ol = styled.ol`
+  font-family: ${({ theme }) => theme.fonts.serif};
+  font-size: ${({ theme }) => theme.fontSizes[2]};
+  color: var(--dimmedForeground);
+  margin: 0;
+  list-style: none;
 `;
 
 const Index = ({ page }) => {
