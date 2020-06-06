@@ -7,7 +7,7 @@ export default styled('main')`
   flex-direction: column;
   margin: 0 auto;
   min-height: 100vh;
-  transition: background-color 0.2s;
+  transition: background-color 0.1s;
 
   ${css({
     maxWidth: 8,

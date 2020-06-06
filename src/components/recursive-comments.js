@@ -17,7 +17,7 @@ const RecursiveComments = ({ comment }) => {
 
   return (
     <Box>
-      <Box mb={[1, 2]} mt={[4, 4]}>
+      <Box mb={[1, 2]} mt={[3, 4]}>
         <Text
           _color="dimmedForeground"
           bold

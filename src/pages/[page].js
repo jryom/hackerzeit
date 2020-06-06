@@ -2,12 +2,7 @@ import Head from 'next/head';
 import styled from 'styled-components';
 import useSWR, { useSWRPages } from 'swr';
 
-import {
-  InfiniteScroll,
-  ItemSubtitle,
-  ItemTitle,
-  LoadingIndicator,
-} from '@/components';
+import { InfiniteScroll, ItemSubtitle, ItemTitle } from '@/components';
 import { PAGES } from '@/constants';
 import { Box } from '@/primitives';
 

@@ -21,7 +21,7 @@ const StyledLink = ({ children, href, as }) => {
   if (!isExternalUrl(href)) {
     return (
       <Link as={as} href={href}>
-        <Anchor>{children}</Anchor>
+        <Anchor href={href}>{children}</Anchor>
       </Link>
     );
   }

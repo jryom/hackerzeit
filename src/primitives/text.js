@@ -17,7 +17,7 @@ const hoverUnderlineCss = `
 const Text = styled('span')`
   color: ${({ _color }) => (_color ? `var(--${_color})` : 'var(--foreground)')};
   line-height: 1.2em;
-  transition: color 0.2s;
+  transition: color 0.1s;
   font-family: ${({ theme, sans, serif }) => {
     if (serif) return theme.fonts.serif;
     if (sans) return theme.fonts.sans;

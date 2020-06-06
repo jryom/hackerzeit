@@ -23,7 +23,7 @@ const Li = styled.li`
     height: 2px;
     left: 0%;
     position: absolute;
-    transition: background-color 0.2s;
+    transition: background-color 0.1s;
     width: 100%;
   }
 `;
@@ -50,13 +50,13 @@ const Navigation = ({ setDarkMode, setSerif, isDarkMode, isSerif }) => {
       mx="auto"
       paddingLeft={[2, 4]}
       paddingRight={[2, 4]}
-      py={[3, 4]}
+      py={4}
     >
       <Ol>
         {Object.keys(PAGES).map((key) => (
           <Li key={PAGES[key]} active={asPath.includes(key.toLowerCase())}>
             <Link as={`/${key.toLowerCase()}`} href="/[page]">
-              <Text fontSize={[0, 2]} userSelectNone>
+              <Text _color="foreground" fontSize={[0, 2]} userSelectNone>
                 {PAGES[key]}
               </Text>
             </Link>

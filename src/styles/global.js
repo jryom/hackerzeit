@@ -80,5 +80,5 @@ button {
 }
 
 svg {
-  transition: fill 0.2s;
+  transition: fill 0.1s;
 }`;

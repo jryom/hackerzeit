@@ -29,8 +29,9 @@ const InfiniteScroll = ({ isLoadingMore, isReachingEnd, loadMore }) => {
     <Box
       alignItems="center"
       display="flex"
-      height={[2, 3]}
+      height={2}
       justifyContent="center"
+      mt={[4, 5]}
     >
       {isLoadingMore ? (
         <LoadingIndicator />

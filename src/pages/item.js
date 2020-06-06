@@ -44,7 +44,7 @@ const Item = () => {
         <title>{`Hacker Zeit${data?.title ? `: ${data.title}` : ''}`}</title>
       </Head>
 
-      <Box mb={[0, 4]}>
+      <Box borderBottom="2px solid var(--extraDimmedForeground)" pb={[3, 4]}>
         <ItemTitle as="h1" data={data} />
         <ItemSubtitle data={data} />
       </Box>
