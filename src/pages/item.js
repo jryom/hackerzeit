@@ -8,7 +8,8 @@ import {
   ItemTitle,
   RecursiveComments,
 } from '@/components';
-import { Box } from '@/primitives';
+import { Box, Text } from '@/primitives';
+import { parseComment } from '@/utils';
 
 const Item = () => {
   const router = useRouter();
@@ -47,6 +48,21 @@ const Item = () => {
       <Box borderBottom="2px solid var(--extraDimmedForeground)" pb={[3, 4]}>
         <ItemTitle as="h1" data={data} />
         <ItemSubtitle data={data} />
+        <Text
+          as="div"
+          css={`
+            overflow-wrap: break-word;
+            hyphens: auto;
+
+            & > * {
+              margin-top: 0.5em;
+            }
+          `}
+          mt={[2, 3]}
+          variant="m"
+        >
+          {parseComment(data.text)}
+        </Text>
       </Box>
       {pages}
 
