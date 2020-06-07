@@ -57,6 +57,8 @@ const Index = ({ page }) => {
               }
               &:last-child {
                 border: none;
+                margin: 0;
+                padding-bottom: 0;
               }
             `}
             mb={[0, 5]}

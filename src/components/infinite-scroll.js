@@ -23,7 +23,7 @@ const InfiniteScroll = ({ isLoadingMore, isReachingEnd, loadMore }) => {
     };
   }, [isActive, loadMore, isReachingEnd, isLoadingMore]);
 
-  if (isReachingEnd) return null;
+  if (isReachingEnd) return <Box height={2} my={[4, 5]} />;
 
   return (
     <Box
@@ -31,7 +31,7 @@ const InfiniteScroll = ({ isLoadingMore, isReachingEnd, loadMore }) => {
       display="flex"
       height={2}
       justifyContent="center"
-      mt={[4, 5]}
+      my={[4, 5]}
     >
       {isLoadingMore ? (
         <LoadingIndicator />

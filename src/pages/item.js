@@ -45,24 +45,27 @@ const Item = () => {
         <title>{`Hacker Zeit${data?.title ? `: ${data.title}` : ''}`}</title>
       </Head>
 
-      <Box borderBottom="2px solid var(--extraDimmedForeground)" pb={[3, 4]}>
+      <Box borderBottom="1px solid var(--extraDimmedForeground)" pb={[3, 4]}>
         <ItemTitle as="h1" data={data} />
         <ItemSubtitle data={data} />
-        <Text
-          as="div"
-          css={`
-            overflow-wrap: break-word;
-            hyphens: auto;
 
-            & > * {
-              margin-top: 0.5em;
-            }
-          `}
-          mt={[2, 3]}
-          variant="m"
-        >
-          {parseComment(data.text)}
-        </Text>
+        {!!data.text && (
+          <Text
+            as="div"
+            css={`
+              overflow-wrap: break-word;
+              hyphens: auto;
+
+              & > * {
+                margin-top: 0.5em;
+              }
+            `}
+            mt={[2, 3]}
+            variant="m"
+          >
+            {parseComment(data.text)}
+          </Text>
+        )}
       </Box>
       {pages}
 

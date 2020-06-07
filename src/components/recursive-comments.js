@@ -1,13 +1,8 @@
 import { useSwipeable } from 'react-swipeable';
-import styled from 'styled-components';
 
 import { useLocalStorage } from '@/hooks';
 import { Box, Text } from '@/primitives';
 import { parseComment, relativeTime } from '@/utils';
-
-const BorderedCommentBox = styled(Box)`
-  border-left-color: var(--extraDimmedForeground);
-`;
 
 const RecursiveComments = ({ comment }) => {
   const [collapsed, setCollapsed] = useLocalStorage(comment?.id, false);
@@ -57,9 +52,8 @@ const RecursiveComments = ({ comment }) => {
           >
             {parseComment(comment.text)}
           </Text>
-          <BorderedCommentBox
-            borderLeft={1}
-            borderLeftStyle="solid"
+          <Box
+            borderLeft="1px solid var(--extraDimmedForeground)"
             pl={[2, 3, 4]}
           >
             {comment.kids.length
@@ -74,7 +68,7 @@ const RecursiveComments = ({ comment }) => {
                   );
                 })
               : null}
-          </BorderedCommentBox>
+          </Box>
         </>
       )}
     </Box>
