@@ -32,7 +32,7 @@ const Ol = styled.ol`
   list-style: none;
 `;
 
-const Index = ({ page }) => {
+const Index = ({ page, initialData }) => {
   const { pages, isLoadingMore, isReachingEnd, loadMore } = useSWRPages(
     page,
 
@@ -41,7 +41,9 @@ const Index = ({ page }) => {
 
       const { data } = withSWR(
         // eslint-disable-next-line react-hooks/rules-of-hooks
-        useSWR(`/api/stories?name=${page}&page=${offset || 0}`)
+        useSWR(`/api/stories?name=${page}&page=${offset || 0}`, {
+          initialData: offset ? undefined : initialData,
+        })
       );
 
       if (!data) return null;
@@ -101,11 +103,30 @@ const Index = ({ page }) => {
   );
 };
 
+export async function getServerSideProps(context) {
+  const initialData = await fetch(
+    `${context.req.protocol || 'http'}://${
+      context.req.headers.host
+    }/api/stories?name=${context.params.page}`
+  )
+    .then((res) => res.json())
+    .catch((e) => {
+      console.log(e);
+      return null;
+    });
+  return { props: { initialData } };
+}
+
 Index.defaultProps = {
   page: null,
 };
 
 Index.propTypes = {
+  initialData: PropTypes.shape({
+    nextPage: PropTypes.number,
+    page: PropTypes.number,
+    stories: PropTypes.array,
+  }).isRequired,
   page: PropTypes.string,
 };
 

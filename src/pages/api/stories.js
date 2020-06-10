@@ -12,7 +12,7 @@ if (!firebase.apps.length) {
 
 export default async (req, res) => {
   const {
-    query: { page, name },
+    query: { page = 0, name },
   } = req;
 
   const ids = await firebase

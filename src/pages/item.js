@@ -11,10 +11,9 @@ import {
 import { Box, Text } from '@/primitives';
 import { parseComment } from '@/utils';
 
-const Item = () => {
+const Item = ({ initialData }) => {
   const router = useRouter();
   const { id } = router.query;
-  const { data } = useSWR(`/api/item?id=${id}`);
 
   const { pages, isLoadingMore, isReachingEnd, loadMore } = useSWRPages(
     `item-${id}`,
@@ -39,17 +38,19 @@ const Item = () => {
     [id]
   );
 
-  return data ? (
+  return initialData ? (
     <>
       <Head>
-        <title>{`Hacker Zeit${data?.title ? `: ${data.title}` : ''}`}</title>
+        <title>
+          {`Hacker Zeit${initialData?.title ? `: ${initialData.title}` : ''}`}
+        </title>
       </Head>
 
       <Box borderBottom="1px solid var(--extraDimmedForeground)" pb={[3, 4]}>
-        <ItemTitle as="h1" data={data} />
-        <ItemSubtitle data={data} />
+        <ItemTitle as="h1" data={initialData} />
+        <ItemSubtitle data={initialData} />
 
-        {!!data.text && (
+        {!!initialData.text && (
           <Text
             as="div"
             css={`
@@ -63,7 +64,7 @@ const Item = () => {
             mt={[2, 3]}
             variant="m"
           >
-            {parseComment(data.text)}
+            {parseComment(initialData.text)}
           </Text>
         )}
       </Box>
@@ -76,6 +77,22 @@ const Item = () => {
       />
     </>
   ) : null;
+};
+
+export async function getServerSideProps(context) {
+  const initialData = await fetch(
+    `${context.req.protocol || 'http'}://${
+      context.req.headers.host
+    }/api/item?id=${context.query.id}&page=0`
+  ).then((res) => res.json());
+  return { props: { initialData } };
+}
+
+Item.propTypes = {
+  initialData: PropTypes.shape({
+    text: PropTypes.string,
+    title: PropTypes.string,
+  }).isRequired,
 };
 
 export default Item;
