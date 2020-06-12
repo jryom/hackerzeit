@@ -1,9 +1,15 @@
 /* eslint-disable react/prop-types */
-import { useRouter } from 'next/router';
+import Router, { useRouter } from 'next/router';
+import { useState } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { SWRConfig } from 'swr';
 
-import { InnerContainer, Navigation, OuterContainer } from '@/components';
+import {
+  InnerContainer,
+  LoadingBar,
+  Navigation,
+  OuterContainer,
+} from '@/components';
 import { useDarkMode, useLocalStorage } from '@/hooks';
 import theme, { GlobalStyle } from '@/styles';
 
@@ -14,6 +20,14 @@ function App({ Component, pageProps }) {
 
   const [isDarkMode, setDarkMode] = useDarkMode();
   const [isSerif, setSerif] = useLocalStorage('isSerif');
+  const [isNavigating, setNavigating] = useState(false);
+
+  Router.events.on('routeChangeStart', () => {
+    setNavigating(true);
+  });
+
+  Router.events.on('routeChangeComplete', () => setNavigating(false));
+  Router.events.on('routeChangeError', () => setNavigating(false));
 
   return (
     <SWRConfig
@@ -25,6 +39,7 @@ function App({ Component, pageProps }) {
     >
       <ThemeProvider theme={theme}>
         <GlobalStyle isDarkMode={isDarkMode} serif={isSerif} />
+        <LoadingBar isNavigating={isNavigating} />
         <OuterContainer>
           <Navigation
             isDarkMode={isDarkMode}
