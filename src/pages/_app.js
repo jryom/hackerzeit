@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import Router, { useRouter } from 'next/router';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import smoothscroll from 'smoothscroll-polyfill';
 import { ThemeProvider } from 'styled-components';
 import { SWRConfig } from 'swr';
 
@@ -17,6 +18,10 @@ function App({ Component, pageProps }) {
   const {
     query: { page },
   } = useRouter();
+
+  useEffect(() => {
+    smoothscroll.polyfill();
+  }, []);
 
   const [isDarkMode, setDarkMode] = useDarkMode();
   const [isSerif, setSerif] = useLocalStorage('isSerif');

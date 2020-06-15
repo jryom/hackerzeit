@@ -1,3 +1,4 @@
+import { useRef } from 'react';
 import { useSwipeable } from 'react-swipeable';
 
 import { useLocalStorage } from '@/hooks';
@@ -5,14 +6,22 @@ import { Box, Text } from '@/primitives';
 import { parseComment, relativeTime } from '@/utils';
 
 const RecursiveComments = ({ comment }) => {
+  const ref = useRef(null);
   const [collapsed, setCollapsed] = useLocalStorage(comment?.id, false);
   const swipeHandlers = useSwipeable({
-    onSwiped: ({ absX, absY }) => absX > absY * 1.5 && setCollapsed(!collapsed),
+    onSwiped: ({ absX, absY }) => {
+      if (absX < absY) return;
+      setCollapsed(!collapsed);
+      if (ref.current.getBoundingClientRect().top < 0) {
+        ref.current.scrollIntoView({ behavior: 'smooth' });
+      }
+    },
+    delta: 60,
   });
 
   return (
     <Box>
-      <Box mb={[1, 2]} mt={[3, 4]}>
+      <Box ref={ref} mb={[1, 2]} mt={[3, 4]}>
         <Text
           _color="dimmedForeground"
           bold
