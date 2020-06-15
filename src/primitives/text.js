@@ -9,8 +9,10 @@ import {
 } from 'styled-system';
 
 const hoverUnderlineCss = `
-  &:hover {
-    text-decoration: underline;
+  @media (hover: hover) {
+    &:hover {
+      text-decoration: underline;
+    }
   }
 `;
 
