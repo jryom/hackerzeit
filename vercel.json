@@ -4,7 +4,6 @@
   "github": {
     "silent": true
   },
-  "redirects": [{ "source": "/", "destination": "/best" }],
   "headers": [
     {
       "source": "/api/(.*)",

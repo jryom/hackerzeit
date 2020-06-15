@@ -12,7 +12,7 @@ const Li = styled.li`
   position: relative;
 
   ${css({
-    marginRight: ['calc(6.5vw - 0.7rem)', 5],
+    marginRight: [4, 5],
   })}
 
   &:after {

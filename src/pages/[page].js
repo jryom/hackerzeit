@@ -89,7 +89,9 @@ const Index = ({ page, initialData }) => {
     <>
       <Head>
         <title>
-          {`Hacker Zeit${page ? `: ${PAGES[page.toUpperCase()]}` : ''}`}
+          {`Hacker Zeit${
+            page && page !== 'top' ? `: ${PAGES[page.toUpperCase()]}` : ''
+          }`}
         </title>
       </Head>
 
@@ -107,7 +109,7 @@ export async function getServerSideProps(context) {
   const initialData = await fetch(
     `${context.req.protocol || 'http'}://${
       context.req.headers.host
-    }/api/stories?name=${context.params.page}`
+    }/api/stories?name=${context?.params?.page || 'top'}`
   )
     .then((res) => res.json())
     .catch((e) => {
@@ -118,7 +120,7 @@ export async function getServerSideProps(context) {
 }
 
 Index.defaultProps = {
-  page: null,
+  page: 'top',
 };
 
 Index.propTypes = {
