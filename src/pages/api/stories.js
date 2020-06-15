@@ -28,11 +28,9 @@ export default async (req, res) => {
     .slice(offset, offset + PAGE_LENGTH)
     .map((id) => firebase.database().ref(`/v0/item/${id}`).once('value'));
 
-  const stories = (
-    await Promise.all(promiseArray).then((snapshotArray) =>
-      snapshotArray.map((snapshot) => snapshot.val())
-    )
-  ).sort((a, b) => b.score - a.score);
+  const stories = await Promise.all(promiseArray).then((snapshotArray) =>
+    snapshotArray.map((snapshot) => snapshot.val())
+  );
 
   res.statusCode = 200;
   res.end(
