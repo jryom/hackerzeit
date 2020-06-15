@@ -29,15 +29,16 @@ export default async (req, res) => {
     .map((id) => firebase.database().ref(`/v0/item/${id}`).once('value'));
 
   const stories = await Promise.all(promiseArray).then((snapshotArray) =>
-    snapshotArray.map((snapshot) => snapshot.val())
+    snapshotArray.map((snapshot) => snapshot.val()).filter((story) => story)
   );
 
-  res.statusCode = 200;
-  res.end(
-    JSON.stringify({
-      page: offset / PAGE_LENGTH,
-      stories,
-      nextPage: totalPages > page ? Number(page) + 1 : null,
-    })
+  res.setHeader(
+    'Cache-Control',
+    'public, max-age=300, s-maxage=1, stale-while-revalidate=10800'
   );
+  res.status(200).json({
+    page: offset / PAGE_LENGTH,
+    stories,
+    nextPage: totalPages > page ? Number(page) + 1 : null,
+  });
 };

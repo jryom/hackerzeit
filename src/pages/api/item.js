@@ -9,6 +9,9 @@ export default async (req, res) => {
 
   const item = await fetchSnapshot(id).then(getValue);
 
-  res.statusCode = 200;
-  res.end(JSON.stringify(item));
+  res.setHeader(
+    'Cache-Control',
+    'public, max-age=300, s-maxage=1, stale-while-revalidate=10800'
+  );
+  res.status(200).json(item);
 };

@@ -6,15 +6,20 @@
   },
   "headers": [
     {
-      "source": "/api/(.*)",
+      "source": "/(.*).png",
       "headers": [
         {
           "key": "Cache-Control",
-          "value": "public, max-age=300"
-        },
+          "value": "public, s-maxage=1, max-age=86400, stale-while-revalidate=10800"
+        }
+      ]
+    },
+    {
+      "source": "/(.*).(json|html)",
+      "headers": [
         {
-          "key": "Content-Type",
-          "value": "application/json"
+          "key": "Cache-Control",
+          "value": "public, s-maxage=1, max-age=300, stale-while-revalidate=10800"
         }
       ]
     }

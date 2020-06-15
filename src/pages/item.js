@@ -85,6 +85,11 @@ export async function getServerSideProps(context) {
       context.req.headers.host
     }/api/item?id=${context.query.id}&page=0`
   ).then((res) => res.json());
+
+  context.res.setHeader(
+    'Cache-Control',
+    'public, max-age=300, s-maxage=1, stale-while-revalidate=10800'
+  );
   return { props: { initialData } };
 }
 

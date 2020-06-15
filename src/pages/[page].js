@@ -116,6 +116,13 @@ export async function getServerSideProps(context) {
       console.log(e);
       return null;
     });
+
+  context.res.setHeader(
+    'Cache-Control',
+    `public, max-age=300, s-maxage=1, stale-while-revalidate=${
+      context?.params?.page === 'new' ? '60' : '10800'
+    }`
+  );
   return { props: { initialData } };
 }
 
