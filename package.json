@@ -22,7 +22,7 @@
     "@styled-system/css": "5.1.5",
     "firebase": "7.15.3",
     "html-to-react": "1.4.3",
-    "intersection-observer": "0.10.0",
+    "intersection-observer": "0.11.0",
     "next": "9.4.4",
     "react": "16.13.1",
     "react-dom": "16.13.1",
