@@ -88,7 +88,7 @@ RecursiveComments.propTypes = {
   comment: PropTypes.shape({
     by: PropTypes.string,
     id: PropTypes.number,
-    kids: PropTypes.array,
+    kids: PropTypes.arrayOf(PropTypes.object),
     text: PropTypes.string,
     time: PropTypes.number,
   }).isRequired,

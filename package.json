@@ -6,7 +6,11 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "lint:css": "stylelint 'src/**/*.js'",
+    "lint:js": "eslint 'src/**/*.js'",
+    "lint": "npm run lint:css; npm run lint:js",
+    "format": "npm run prettier -- --write"
   },
   "repository": {
     "type": "git",

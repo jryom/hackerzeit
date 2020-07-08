@@ -30,7 +30,6 @@ ItemSubtitle.propTypes = {
     by: PropTypes.string.isRequired,
     descendants: PropTypes.number,
     id: PropTypes.number.isRequired,
-    kids: PropTypes.array,
     score: PropTypes.number.isRequired,
     time: PropTypes.number.isRequired,
   }).isRequired,
