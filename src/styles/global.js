@@ -61,16 +61,13 @@ pre {
   font-size: 90%;
   margin: 0.5em 0;
   padding: 0.5em 0;
+  white-space: pre-wrap;
+  word-break: keep-all;
 }
 
 a:not([class]) {
   color: var(--accent);
   font-weight: 500;
-}
-
-pre {
-  white-space: pre-wrap;
-  word-break: keep-all;
 }
 
 button {

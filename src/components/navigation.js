@@ -113,11 +113,16 @@ const Navigation = ({ setDarkMode, setSerif, isDarkMode, isSerif }) => {
   );
 };
 
+Navigation.defaultProps = {
+  isDarkMode: false,
+  isSerif: false,
+};
+
 Navigation.propTypes = {
   setDarkMode: PropTypes.func.isRequired,
   setSerif: PropTypes.func.isRequired,
-  isDarkMode: PropTypes.bool.isRequired,
-  isSerif: PropTypes.bool.isRequired,
+  isDarkMode: PropTypes.bool,
+  isSerif: PropTypes.bool,
 };
 
 export default Navigation;

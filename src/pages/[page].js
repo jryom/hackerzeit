@@ -134,7 +134,7 @@ Index.propTypes = {
   initialData: PropTypes.shape({
     nextPage: PropTypes.number,
     page: PropTypes.number,
-    stories: PropTypes.array,
+    stories: PropTypes.arrayOf(PropTypes.object),
   }).isRequired,
   page: PropTypes.string,
 };
