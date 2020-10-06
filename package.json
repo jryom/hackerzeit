@@ -72,18 +72,5 @@
       "stylelint"
     ],
     "*.{js,md}": "prettier --write"
-  },
-  "renovate": {
-    "assignAutomerge": true,
-    "automerge": true,
-    "prFooter": null,
-    "prHeader": null,
-    "rangeStrategy": "pin",
-    "reviewers": [
-      "iamjesper"
-    ],
-    "schedule": [
-      "every month"
-    ]
   }
 }
