@@ -34,7 +34,7 @@
     "smoothscroll-polyfill": "0.4.4",
     "styled-components": "5.1.1",
     "styled-system": "5.1.5",
-    "swr": "0.2.3"
+    "swr": "0.5.4"
   },
   "devDependencies": {
     "@commitlint/cli": "9.1.2",
