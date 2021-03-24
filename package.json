@@ -28,11 +28,11 @@
     "html-to-react": "1.4.3",
     "intersection-observer": "0.11.0",
     "next": "9.4.4",
-    "react": "16.13.1",
+    "react": "16.14.0",
     "react-dom": "16.13.1",
     "react-swipeable": "5.5.1",
     "smoothscroll-polyfill": "0.4.4",
-    "styled-components": "5.1.1",
+    "styled-components": "5.2.1",
     "styled-system": "5.1.5",
     "swr": "0.2.3"
   },
